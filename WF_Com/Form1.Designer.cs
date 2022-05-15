@@ -31,23 +31,23 @@ namespace WF_Com
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.cBoxParityBits = new System.Windows.Forms.ComboBox();
+            this.cBoxStopBits = new System.Windows.Forms.ComboBox();
+            this.cBoxDataBits = new System.Windows.Forms.ComboBox();
+            this.cBoxBaudRate = new System.Windows.Forms.ComboBox();
+            this.cBoxComPort = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tBoxDataIN = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.cBoxComPort = new System.Windows.Forms.ComboBox();
-            this.cBoxBaudRate = new System.Windows.Forms.ComboBox();
-            this.cBoxDataBits = new System.Windows.Forms.ComboBox();
-            this.cBoxStopBits = new System.Windows.Forms.ComboBox();
-            this.cBoxParityBits = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -71,32 +71,62 @@ namespace WF_Com
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки COM Port";
             // 
-            // label1
+            // cBoxParityBits
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Com port";
+            this.cBoxParityBits.FormattingEnabled = true;
+            this.cBoxParityBits.Items.AddRange(new object[] {
+            "None"});
+            this.cBoxParityBits.Location = new System.Drawing.Point(100, 172);
+            this.cBoxParityBits.Name = "cBoxParityBits";
+            this.cBoxParityBits.Size = new System.Drawing.Size(100, 21);
+            this.cBoxParityBits.TabIndex = 14;
             // 
-            // label2
+            // cBoxStopBits
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Baud rate";
+            this.cBoxStopBits.FormattingEnabled = true;
+            this.cBoxStopBits.Items.AddRange(new object[] {
+            "One"});
+            this.cBoxStopBits.Location = new System.Drawing.Point(100, 133);
+            this.cBoxStopBits.Name = "cBoxStopBits";
+            this.cBoxStopBits.Size = new System.Drawing.Size(100, 21);
+            this.cBoxStopBits.TabIndex = 13;
             // 
-            // label3
+            // cBoxDataBits
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Data bits";
+            this.cBoxDataBits.FormattingEnabled = true;
+            this.cBoxDataBits.Items.AddRange(new object[] {
+            "8"});
+            this.cBoxDataBits.Location = new System.Drawing.Point(100, 97);
+            this.cBoxDataBits.Name = "cBoxDataBits";
+            this.cBoxDataBits.Size = new System.Drawing.Size(100, 21);
+            this.cBoxDataBits.TabIndex = 12;
+            // 
+            // cBoxBaudRate
+            // 
+            this.cBoxBaudRate.FormattingEnabled = true;
+            this.cBoxBaudRate.Items.AddRange(new object[] {
+            "9600"});
+            this.cBoxBaudRate.Location = new System.Drawing.Point(100, 61);
+            this.cBoxBaudRate.Name = "cBoxBaudRate";
+            this.cBoxBaudRate.Size = new System.Drawing.Size(100, 21);
+            this.cBoxBaudRate.TabIndex = 11;
+            // 
+            // cBoxComPort
+            // 
+            this.cBoxComPort.FormattingEnabled = true;
+            this.cBoxComPort.Location = new System.Drawing.Point(100, 20);
+            this.cBoxComPort.Name = "cBoxComPort";
+            this.cBoxComPort.Size = new System.Drawing.Size(100, 21);
+            this.cBoxComPort.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 172);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Parity bits";
             // 
             // label4
             // 
@@ -107,14 +137,32 @@ namespace WF_Com
             this.label4.TabIndex = 8;
             this.label4.Text = "Stop bits";
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Parity bits";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Data bits";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Baud rate";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Com port";
             // 
             // btnOpen
             // 
@@ -137,6 +185,13 @@ namespace WF_Com
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 60);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(188, 23);
+            this.progressBar1.TabIndex = 8;
+            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(108, 19);
@@ -145,13 +200,7 @@ namespace WF_Com
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Отключить";
             this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 60);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(188, 23);
-            this.progressBar1.TabIndex = 8;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tBoxDataIN
             // 
@@ -172,54 +221,6 @@ namespace WF_Com
             // serialPort1
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
-            // 
-            // cBoxComPort
-            // 
-            this.cBoxComPort.FormattingEnabled = true;
-            this.cBoxComPort.Location = new System.Drawing.Point(100, 20);
-            this.cBoxComPort.Name = "cBoxComPort";
-            this.cBoxComPort.Size = new System.Drawing.Size(100, 21);
-            this.cBoxComPort.TabIndex = 10;
-            // 
-            // cBoxBaudRate
-            // 
-            this.cBoxBaudRate.FormattingEnabled = true;
-            this.cBoxBaudRate.Items.AddRange(new object[] {
-            "9600"});
-            this.cBoxBaudRate.Location = new System.Drawing.Point(100, 61);
-            this.cBoxBaudRate.Name = "cBoxBaudRate";
-            this.cBoxBaudRate.Size = new System.Drawing.Size(100, 21);
-            this.cBoxBaudRate.TabIndex = 11;
-            // 
-            // cBoxDataBits
-            // 
-            this.cBoxDataBits.FormattingEnabled = true;
-            this.cBoxDataBits.Items.AddRange(new object[] {
-            "8"});
-            this.cBoxDataBits.Location = new System.Drawing.Point(100, 97);
-            this.cBoxDataBits.Name = "cBoxDataBits";
-            this.cBoxDataBits.Size = new System.Drawing.Size(100, 21);
-            this.cBoxDataBits.TabIndex = 12;
-            // 
-            // cBoxStopBits
-            // 
-            this.cBoxStopBits.FormattingEnabled = true;
-            this.cBoxStopBits.Items.AddRange(new object[] {
-            "One"});
-            this.cBoxStopBits.Location = new System.Drawing.Point(100, 133);
-            this.cBoxStopBits.Name = "cBoxStopBits";
-            this.cBoxStopBits.Size = new System.Drawing.Size(100, 21);
-            this.cBoxStopBits.TabIndex = 13;
-            // 
-            // cBoxParityBits
-            // 
-            this.cBoxParityBits.FormattingEnabled = true;
-            this.cBoxParityBits.Items.AddRange(new object[] {
-            "None"});
-            this.cBoxParityBits.Location = new System.Drawing.Point(100, 172);
-            this.cBoxParityBits.Name = "cBoxParityBits";
-            this.cBoxParityBits.Size = new System.Drawing.Size(100, 21);
-            this.cBoxParityBits.TabIndex = 14;
             // 
             // Form1
             // 

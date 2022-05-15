@@ -44,6 +44,12 @@ namespace WF_Com
                 MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+                serialPort1.Close();
+            progressBar1.Value = 0;
+        }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -58,9 +64,9 @@ namespace WF_Com
                 foreach (var item in dataIN)
                 {
                     if (item == 'g')
-                        tBoxDataIN.Text = dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1];
+                        tBoxDataIN.Text = dataIN[dataIN.IndexOf(item) - 9].ToString()/* + dataIN[dataIN.IndexOf(item) - 8].ToString()*/ + dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1];
                 }
-                Thread.Sleep(1);
+                Thread.Sleep(10);
             }
             catch { }
         }
