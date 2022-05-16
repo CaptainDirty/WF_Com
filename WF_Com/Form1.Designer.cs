@@ -30,10 +30,10 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cBoxParityBits = new System.Windows.Forms.ComboBox();
             this.cBoxStopBits = new System.Windows.Forms.ComboBox();
@@ -54,6 +54,8 @@ namespace WF_Com
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.chartWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnStartChartWeight = new System.Windows.Forms.Button();
+            this.btnClearChartWeight = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).BeginInit();
@@ -235,35 +237,57 @@ namespace WF_Com
             // 
             // chartWeight
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartWeight.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartWeight.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartWeight.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartWeight.Legends.Add(legend3);
             this.chartWeight.Location = new System.Drawing.Point(300, 97);
             this.chartWeight.Name = "chartWeight";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Blue;
-            series1.Legend = "Legend1";
-            series1.Name = "Текущий вес, г";
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "Убыль влаги, г";
-            this.chartWeight.Series.Add(series1);
-            this.chartWeight.Series.Add(series2);
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.Blue;
+            series5.Legend = "Legend1";
+            series5.Name = "Текущий вес, г";
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Color = System.Drawing.Color.Red;
+            series6.Legend = "Legend1";
+            series6.Name = "Убыль влаги, г";
+            this.chartWeight.Series.Add(series5);
+            this.chartWeight.Series.Add(series6);
             this.chartWeight.Size = new System.Drawing.Size(488, 262);
             this.chartWeight.TabIndex = 11;
             this.chartWeight.Text = "chart1";
+            // 
+            // btnStartChartWeight
+            // 
+            this.btnStartChartWeight.Location = new System.Drawing.Point(385, 378);
+            this.btnStartChartWeight.Name = "btnStartChartWeight";
+            this.btnStartChartWeight.Size = new System.Drawing.Size(127, 23);
+            this.btnStartChartWeight.TabIndex = 12;
+            this.btnStartChartWeight.Text = "Рисовать график";
+            this.btnStartChartWeight.UseVisualStyleBackColor = true;
+            this.btnStartChartWeight.Click += new System.EventHandler(this.btnStartChartWeight_Click);
+            // 
+            // btnClearChartWeight
+            // 
+            this.btnClearChartWeight.Location = new System.Drawing.Point(518, 378);
+            this.btnClearChartWeight.Name = "btnClearChartWeight";
+            this.btnClearChartWeight.Size = new System.Drawing.Size(127, 23);
+            this.btnClearChartWeight.TabIndex = 13;
+            this.btnClearChartWeight.Text = "Обнулить график";
+            this.btnClearChartWeight.UseVisualStyleBackColor = true;
+            this.btnClearChartWeight.Click += new System.EventHandler(this.btnClearChartWeight_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 382);
+            this.ClientSize = new System.Drawing.Size(800, 424);
+            this.Controls.Add(this.btnClearChartWeight);
+            this.Controls.Add(this.btnStartChartWeight);
             this.Controls.Add(this.chartWeight);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tBoxDataIN);
@@ -302,6 +326,8 @@ namespace WF_Com
         private System.Windows.Forms.ComboBox cBoxComPort;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWeight;
+        private System.Windows.Forms.Button btnStartChartWeight;
+        private System.Windows.Forms.Button btnClearChartWeight;
     }
 }
 

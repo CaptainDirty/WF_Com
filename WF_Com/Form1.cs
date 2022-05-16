@@ -30,7 +30,7 @@ namespace WF_Com
             string[] ports = SerialPort.GetPortNames();
             cBoxComPort.Items.AddRange(ports);
 
-            timer1.Enabled = true;
+            
 
             chartWeight.ChartAreas[0].AxisY.Maximum = 200;
             chartWeight.ChartAreas[0].AxisY.Minimum = -5;
@@ -108,6 +108,22 @@ namespace WF_Com
                 chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
                 chartWeight.ChartAreas[0].AxisX.Interval = 5;
             }
+        }
+
+
+        private void btnClearChartWeight_Click(object sender, EventArgs e)
+        {
+            _countSeconds = 0;
+            chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
+            chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
+
+            chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+            chartWeight.ChartAreas[0].AxisX.Interval = 5;
+        }
+
+        private void btnStartChartWeight_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
         }
     }
 }
