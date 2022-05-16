@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WF_Com
 {
@@ -18,12 +19,30 @@ namespace WF_Com
         public Form1()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
+
+        private int _countSeconds = 0;
+        //int limitWeight = 999;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxComPort.Items.AddRange(ports);
+
+            timer1.Enabled = true;
+
+            chartWeight.ChartAreas[0].AxisY.Maximum = 200;
+            chartWeight.ChartAreas[0].AxisY.Minimum = -5;
+
+            chartWeight.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
+            chartWeight.Series[0].XValueType = ChartValueType.DateTime;
+
+            chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
+            chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
+
+            chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+            chartWeight.ChartAreas[0].AxisX.Interval = 5;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -69,6 +88,26 @@ namespace WF_Com
                 Thread.Sleep(10);
             }
             catch { }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime timeNow = DateTime.Now;
+            string value = tBoxDataIN.Text;
+
+            chartWeight.Series[0].Points.AddXY(timeNow, value);
+
+            _countSeconds ++;
+
+            if (_countSeconds == 550)
+            {
+                _countSeconds = 0;
+                chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
+                chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
+
+                chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+                chartWeight.ChartAreas[0].AxisX.Interval = 5;
+            }
         }
     }
 }

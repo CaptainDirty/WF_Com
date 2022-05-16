@@ -30,6 +30,10 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cBoxParityBits = new System.Windows.Forms.ComboBox();
             this.cBoxStopBits = new System.Windows.Forms.ComboBox();
@@ -48,8 +52,11 @@ namespace WF_Com
             this.tBoxDataIN = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.chartWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,7 +71,7 @@ namespace WF_Com
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(78, 36);
+            this.groupBox1.Location = new System.Drawing.Point(12, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(216, 216);
             this.groupBox1.TabIndex = 5;
@@ -122,7 +129,7 @@ namespace WF_Com
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 172);
+            this.label5.Location = new System.Drawing.Point(23, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 9;
@@ -131,7 +138,7 @@ namespace WF_Com
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 136);
+            this.label4.Location = new System.Drawing.Point(23, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 8;
@@ -140,7 +147,7 @@ namespace WF_Com
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 97);
+            this.label3.Location = new System.Drawing.Point(22, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 7;
@@ -149,7 +156,7 @@ namespace WF_Com
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 61);
+            this.label2.Location = new System.Drawing.Point(22, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 6;
@@ -158,7 +165,7 @@ namespace WF_Com
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Location = new System.Drawing.Point(22, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 5;
@@ -179,9 +186,9 @@ namespace WF_Com
             this.groupBox2.Controls.Add(this.progressBar1);
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.btnOpen);
-            this.groupBox2.Location = new System.Drawing.Point(78, 259);
+            this.groupBox2.Location = new System.Drawing.Point(12, 252);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.Size = new System.Drawing.Size(216, 100);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
@@ -189,14 +196,14 @@ namespace WF_Com
             // 
             this.progressBar1.Location = new System.Drawing.Point(6, 60);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(188, 23);
+            this.progressBar1.Size = new System.Drawing.Size(194, 23);
             this.progressBar1.TabIndex = 8;
             // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(108, 19);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(86, 23);
+            this.btnClose.Size = new System.Drawing.Size(92, 23);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Отключить";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -204,7 +211,7 @@ namespace WF_Com
             // 
             // tBoxDataIN
             // 
-            this.tBoxDataIN.Location = new System.Drawing.Point(461, 97);
+            this.tBoxDataIN.Location = new System.Drawing.Point(344, 64);
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.Size = new System.Drawing.Size(100, 20);
             this.tBoxDataIN.TabIndex = 8;
@@ -212,7 +219,7 @@ namespace WF_Com
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(499, 73);
+            this.label6.Location = new System.Drawing.Point(382, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 9;
@@ -222,11 +229,42 @@ namespace WF_Com
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // chartWeight
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartWeight.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWeight.Legends.Add(legend1);
+            this.chartWeight.Location = new System.Drawing.Point(300, 97);
+            this.chartWeight.Name = "chartWeight";
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Legend = "Legend1";
+            series1.Name = "Текущий вес, г";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "Убыль влаги, г";
+            this.chartWeight.Series.Add(series1);
+            this.chartWeight.Series.Add(series2);
+            this.chartWeight.Size = new System.Drawing.Size(488, 262);
+            this.chartWeight.TabIndex = 11;
+            this.chartWeight.Text = "chart1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 382);
+            this.Controls.Add(this.chartWeight);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tBoxDataIN);
             this.Controls.Add(this.groupBox2);
@@ -237,6 +275,7 @@ namespace WF_Com
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,6 +300,8 @@ namespace WF_Com
         private System.Windows.Forms.ComboBox cBoxDataBits;
         private System.Windows.Forms.ComboBox cBoxBaudRate;
         private System.Windows.Forms.ComboBox cBoxComPort;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartWeight;
     }
 }
 
