@@ -124,6 +124,13 @@ namespace WF_Com
         private void btnStartChartWeight_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+
+            _countSeconds = 0;
+            chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
+            chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
+
+            chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+            chartWeight.ChartAreas[0].AxisX.Interval = 5;
         }
     }
 }
