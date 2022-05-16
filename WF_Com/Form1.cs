@@ -83,7 +83,7 @@ namespace WF_Com
                 foreach (var item in dataIN)
                 {
                     if (item == 'g')
-                        tBoxDataIN.Text = dataIN[dataIN.IndexOf(item) - 9].ToString()/* + dataIN[dataIN.IndexOf(item) - 8].ToString()*/ + dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1];
+                        tBoxDataIN.Text = (dataIN[dataIN.IndexOf(item) - 9].ToString()/* + dataIN[dataIN.IndexOf(item) - 8].ToString()*/ + dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1]).Replace(".", ",");
                 }
                 Thread.Sleep(10);
             }
@@ -131,6 +131,14 @@ namespace WF_Com
 
             chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
             chartWeight.ChartAreas[0].AxisX.Interval = 5;
+        }
+
+        private void tBoxDataIN_TextChanged(object sender, EventArgs e)
+        {
+            string noprobel = tBoxDataIN.Text/*.Trim().Replace(".", ",")*/;
+            double result = 0;
+            if (double.TryParse(noprobel, out result))
+                tBoxUbyl.Text = Convert.ToString(result - 20);
         }
     }
 }
