@@ -135,7 +135,7 @@ namespace WF_Com
 
         private void tBoxDataIN_TextChanged(object sender, EventArgs e)
         {
-            string noprobel = tBoxDataIN.Text/*.Trim().Replace(".", ",")*/;
+            string noprobel = tBoxDataIN.Text;
             double result = 0;
             if (double.TryParse(noprobel, out result))
                 tBoxUbyl.Text = Convert.ToString(result - 20);

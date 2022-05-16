@@ -217,6 +217,7 @@ namespace WF_Com
             // 
             this.tBoxDataIN.Location = new System.Drawing.Point(344, 64);
             this.tBoxDataIN.Name = "tBoxDataIN";
+            this.tBoxDataIN.ReadOnly = true;
             this.tBoxDataIN.Size = new System.Drawing.Size(100, 20);
             this.tBoxDataIN.TabIndex = 8;
             this.tBoxDataIN.TextChanged += new System.EventHandler(this.tBoxDataIN_TextChanged);
@@ -244,7 +245,7 @@ namespace WF_Com
             this.chartWeight.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
             this.chartWeight.Legends.Add(legend4);
-            this.chartWeight.Location = new System.Drawing.Point(300, 97);
+            this.chartWeight.Location = new System.Drawing.Point(278, 90);
             this.chartWeight.Name = "chartWeight";
             series7.BorderWidth = 2;
             series7.ChartArea = "ChartArea1";
@@ -288,6 +289,7 @@ namespace WF_Com
             // 
             this.tBoxUbyl.Location = new System.Drawing.Point(562, 64);
             this.tBoxUbyl.Name = "tBoxUbyl";
+            this.tBoxUbyl.ReadOnly = true;
             this.tBoxUbyl.Size = new System.Drawing.Size(100, 20);
             this.tBoxUbyl.TabIndex = 14;
             // 
