@@ -162,12 +162,11 @@ namespace WF_Com
             chartWeight.ChartAreas[0].AxisX.Interval = 5;
         }
 
-        private void tBoxDataIN_TextChanged(object sender, EventArgs e)
+        private void tBoxUbyl_Click(object sender, EventArgs e)
         {
-            string noprobel = tBoxDataIN.Text.Replace(".", ",").Trim();
-            double result = 0;
-            if (double.TryParse(noprobel, out result))
-                tBoxUbyl.Text = Convert.ToString(result - 20);
+            //double ubyl;
+            //ubyl = Convert.ToDouble(tBoxDataIN.Text.Trim().Replace(".",","))*2;
+            //tBoxUbyl.Text = Convert.ToString(ubyl);
         }
     }
 }
