@@ -22,6 +22,11 @@ namespace WF_Com
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+
+            cBoxBaudRate.SelectedIndex = 0;
+            cBoxDataBits.SelectedIndex = 0;
+            cBoxStopBits.SelectedIndex = 0;
+            cBoxParityBits.SelectedIndex = 0;
         }
 
         private int _countSeconds = 0;

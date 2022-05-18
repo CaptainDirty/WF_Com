@@ -30,9 +30,9 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.btnOpen = new MetroFramework.Controls.MetroButton();
@@ -43,7 +43,7 @@ namespace WF_Com
             this.btnStartChartWeight = new MetroFramework.Controls.MetroButton();
             this.btnClearChartWeight = new MetroFramework.Controls.MetroButton();
             this.tBoxDataIN = new MetroFramework.Controls.MetroTextBox();
-            this.tBoxUbyl = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxH2O = new MetroFramework.Controls.MetroTextBox();
             this.cBoxBaudRate = new MetroFramework.Controls.MetroComboBox();
             this.cBoxDataBits = new MetroFramework.Controls.MetroComboBox();
             this.cBoxStopBits = new MetroFramework.Controls.MetroComboBox();
@@ -66,15 +66,15 @@ namespace WF_Com
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxStartWeight = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxTimeToFresh = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxFinishWeight = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxUbyl = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).BeginInit();
             this.metroTabControl1.SuspendLayout();
@@ -127,19 +127,19 @@ namespace WF_Com
             // 
             // chartWeight
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartWeight.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartWeight.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartWeight.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWeight.Legends.Add(legend1);
             this.chartWeight.Location = new System.Drawing.Point(-10, 15);
             this.chartWeight.Name = "chartWeight";
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Blue;
-            series2.Legend = "Legend1";
-            series2.Name = "Текущий вес, г";
-            this.chartWeight.Series.Add(series2);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Legend = "Legend1";
+            series1.Name = "Текущий вес, г";
+            this.chartWeight.Series.Add(series1);
             this.chartWeight.Size = new System.Drawing.Size(1027, 287);
             this.chartWeight.TabIndex = 11;
             this.chartWeight.Text = "chart1";
@@ -169,13 +169,13 @@ namespace WF_Com
             this.tBoxDataIN.Size = new System.Drawing.Size(97, 23);
             this.tBoxDataIN.TabIndex = 18;
             // 
-            // tBoxUbyl
+            // tBoxH2O
             // 
-            this.tBoxUbyl.Location = new System.Drawing.Point(980, 237);
-            this.tBoxUbyl.Name = "tBoxUbyl";
-            this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
-            this.tBoxUbyl.TabIndex = 19;
-            this.tBoxUbyl.Click += new System.EventHandler(this.tBoxUbyl_Click);
+            this.tBoxH2O.Location = new System.Drawing.Point(980, 237);
+            this.tBoxH2O.Name = "tBoxH2O";
+            this.tBoxH2O.Size = new System.Drawing.Size(97, 23);
+            this.tBoxH2O.TabIndex = 19;
+            this.tBoxH2O.Click += new System.EventHandler(this.tBoxUbyl_Click);
             // 
             // cBoxBaudRate
             // 
@@ -400,19 +400,19 @@ namespace WF_Com
             this.metroLabel12.TabIndex = 33;
             this.metroLabel12.Text = "Начальная масса, г";
             // 
-            // metroTextBox1
+            // tBoxStartWeight
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(827, 172);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(98, 23);
-            this.metroTextBox1.TabIndex = 34;
+            this.tBoxStartWeight.Location = new System.Drawing.Point(827, 172);
+            this.tBoxStartWeight.Name = "tBoxStartWeight";
+            this.tBoxStartWeight.Size = new System.Drawing.Size(98, 23);
+            this.tBoxStartWeight.TabIndex = 34;
             // 
-            // metroTextBox2
+            // tBoxTimeToFresh
             // 
-            this.metroTextBox2.Location = new System.Drawing.Point(681, 237);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(98, 23);
-            this.metroTextBox2.TabIndex = 35;
+            this.tBoxTimeToFresh.Location = new System.Drawing.Point(681, 237);
+            this.tBoxTimeToFresh.Name = "tBoxTimeToFresh";
+            this.tBoxTimeToFresh.Size = new System.Drawing.Size(98, 23);
+            this.tBoxTimeToFresh.TabIndex = 35;
             // 
             // metroLabel13
             // 
@@ -423,12 +423,12 @@ namespace WF_Com
             this.metroLabel13.TabIndex = 36;
             this.metroLabel13.Text = "Конечная масса, г";
             // 
-            // metroTextBox3
+            // tBoxFinishWeight
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(827, 237);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(98, 23);
-            this.metroTextBox3.TabIndex = 37;
+            this.tBoxFinishWeight.Location = new System.Drawing.Point(827, 237);
+            this.tBoxFinishWeight.Name = "tBoxFinishWeight";
+            this.tBoxFinishWeight.Size = new System.Drawing.Size(98, 23);
+            this.tBoxFinishWeight.TabIndex = 37;
             // 
             // metroLabel14
             // 
@@ -469,12 +469,12 @@ namespace WF_Com
             this.metroLabel17.TabIndex = 42;
             this.metroLabel17.Text = "Убыль влаги, г";
             // 
-            // metroTextBox4
+            // tBoxUbyl
             // 
-            this.metroTextBox4.Location = new System.Drawing.Point(980, 172);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(97, 23);
-            this.metroTextBox4.TabIndex = 41;
+            this.tBoxUbyl.Location = new System.Drawing.Point(980, 172);
+            this.tBoxUbyl.Name = "tBoxUbyl";
+            this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
+            this.tBoxUbyl.TabIndex = 41;
             // 
             // Form1
             // 
@@ -482,14 +482,14 @@ namespace WF_Com
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 744);
             this.Controls.Add(this.metroLabel17);
-            this.Controls.Add(this.metroTextBox4);
+            this.Controls.Add(this.tBoxUbyl);
             this.Controls.Add(this.metroLabel16);
             this.Controls.Add(this.metroLabel15);
             this.Controls.Add(this.metroLabel14);
-            this.Controls.Add(this.metroTextBox3);
+            this.Controls.Add(this.tBoxFinishWeight);
             this.Controls.Add(this.metroLabel13);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.tBoxTimeToFresh);
+            this.Controls.Add(this.tBoxStartWeight);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.metroTabControl1);
@@ -509,7 +509,7 @@ namespace WF_Com
             this.Controls.Add(this.cBoxBaudRate);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.tBoxUbyl);
+            this.Controls.Add(this.tBoxH2O);
             this.Controls.Add(this.tBoxDataIN);
             this.Controls.Add(this.groupBox2);
             this.Name = "Form1";
@@ -534,7 +534,7 @@ namespace WF_Com
         private MetroFramework.Controls.MetroButton btnClose;
         private MetroFramework.Controls.MetroButton btnOpen;
         private MetroFramework.Controls.MetroTextBox tBoxDataIN;
-        private MetroFramework.Controls.MetroTextBox tBoxUbyl;
+        private MetroFramework.Controls.MetroTextBox tBoxH2O;
         private MetroFramework.Controls.MetroComboBox cBoxBaudRate;
         private MetroFramework.Controls.MetroComboBox cBoxDataBits;
         private MetroFramework.Controls.MetroComboBox cBoxStopBits;
@@ -557,15 +557,15 @@ namespace WF_Com
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroTextBox tBoxStartWeight;
+        private MetroFramework.Controls.MetroTextBox tBoxTimeToFresh;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox tBoxFinishWeight;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel17;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox tBoxUbyl;
     }
 }
 
