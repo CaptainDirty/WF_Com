@@ -30,206 +30,86 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cBoxParityBits = new System.Windows.Forms.ComboBox();
-            this.cBoxStopBits = new System.Windows.Forms.ComboBox();
-            this.cBoxDataBits = new System.Windows.Forms.ComboBox();
-            this.cBoxBaudRate = new System.Windows.Forms.ComboBox();
-            this.cBoxComPort = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnOpen = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.tBoxDataIN = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnClose = new MetroFramework.Controls.MetroButton();
+            this.btnOpen = new MetroFramework.Controls.MetroButton();
+            this.progressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.chartWeight = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnStartChartWeight = new System.Windows.Forms.Button();
-            this.btnClearChartWeight = new System.Windows.Forms.Button();
-            this.tBoxUbyl = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btnStartChartWeight = new MetroFramework.Controls.MetroButton();
+            this.btnClearChartWeight = new MetroFramework.Controls.MetroButton();
+            this.tBoxDataIN = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxUbyl = new MetroFramework.Controls.MetroTextBox();
+            this.cBoxBaudRate = new MetroFramework.Controls.MetroComboBox();
+            this.cBoxDataBits = new MetroFramework.Controls.MetroComboBox();
+            this.cBoxStopBits = new MetroFramework.Controls.MetroComboBox();
+            this.cBoxComPort = new MetroFramework.Controls.MetroComboBox();
+            this.cBoxParityBits = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.lblStatusCom = new System.Windows.Forms.Label();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).BeginInit();
+            this.metroTabControl1.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBox2
             // 
-            this.groupBox1.Controls.Add(this.cBoxParityBits);
-            this.groupBox1.Controls.Add(this.cBoxStopBits);
-            this.groupBox1.Controls.Add(this.cBoxDataBits);
-            this.groupBox1.Controls.Add(this.cBoxBaudRate);
-            this.groupBox1.Controls.Add(this.cBoxComPort);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 30);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(216, 216);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Настройки COM Port";
+            this.groupBox2.Controls.Add(this.btnClose);
+            this.groupBox2.Controls.Add(this.btnOpen);
+            this.groupBox2.Controls.Add(this.progressBar1);
+            this.groupBox2.Location = new System.Drawing.Point(349, 247);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(223, 100);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
             // 
-            // cBoxParityBits
+            // btnClose
             // 
-            this.cBoxParityBits.FormattingEnabled = true;
-            this.cBoxParityBits.Items.AddRange(new object[] {
-            "None"});
-            this.cBoxParityBits.Location = new System.Drawing.Point(100, 172);
-            this.cBoxParityBits.Name = "cBoxParityBits";
-            this.cBoxParityBits.Size = new System.Drawing.Size(100, 21);
-            this.cBoxParityBits.TabIndex = 14;
-            // 
-            // cBoxStopBits
-            // 
-            this.cBoxStopBits.FormattingEnabled = true;
-            this.cBoxStopBits.Items.AddRange(new object[] {
-            "One"});
-            this.cBoxStopBits.Location = new System.Drawing.Point(100, 133);
-            this.cBoxStopBits.Name = "cBoxStopBits";
-            this.cBoxStopBits.Size = new System.Drawing.Size(100, 21);
-            this.cBoxStopBits.TabIndex = 13;
-            // 
-            // cBoxDataBits
-            // 
-            this.cBoxDataBits.FormattingEnabled = true;
-            this.cBoxDataBits.Items.AddRange(new object[] {
-            "8"});
-            this.cBoxDataBits.Location = new System.Drawing.Point(100, 97);
-            this.cBoxDataBits.Name = "cBoxDataBits";
-            this.cBoxDataBits.Size = new System.Drawing.Size(100, 21);
-            this.cBoxDataBits.TabIndex = 12;
-            // 
-            // cBoxBaudRate
-            // 
-            this.cBoxBaudRate.FormattingEnabled = true;
-            this.cBoxBaudRate.Items.AddRange(new object[] {
-            "9600"});
-            this.cBoxBaudRate.Location = new System.Drawing.Point(100, 61);
-            this.cBoxBaudRate.Name = "cBoxBaudRate";
-            this.cBoxBaudRate.Size = new System.Drawing.Size(100, 21);
-            this.cBoxBaudRate.TabIndex = 11;
-            // 
-            // cBoxComPort
-            // 
-            this.cBoxComPort.FormattingEnabled = true;
-            this.cBoxComPort.Location = new System.Drawing.Point(100, 20);
-            this.cBoxComPort.Name = "cBoxComPort";
-            this.cBoxComPort.Size = new System.Drawing.Size(100, 21);
-            this.cBoxComPort.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Parity bits";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Stop bits";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Data bits";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Baud rate";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Com port";
+            this.btnClose.Location = new System.Drawing.Point(120, 19);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 23);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Отключить";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpen
             // 
             this.btnOpen.Location = new System.Drawing.Point(6, 19);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(96, 23);
-            this.btnOpen.TabIndex = 6;
+            this.btnOpen.Size = new System.Drawing.Size(95, 23);
+            this.btnOpen.TabIndex = 18;
             this.btnOpen.Text = "Соеденить";
-            this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Controls.Add(this.btnClose);
-            this.groupBox2.Controls.Add(this.btnOpen);
-            this.groupBox2.Location = new System.Drawing.Point(12, 252);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(216, 100);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 60);
+            this.progressBar1.Location = new System.Drawing.Point(6, 63);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(194, 23);
-            this.progressBar1.TabIndex = 8;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(108, 19);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(92, 23);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Отключить";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // tBoxDataIN
-            // 
-            this.tBoxDataIN.Location = new System.Drawing.Point(344, 64);
-            this.tBoxDataIN.Name = "tBoxDataIN";
-            this.tBoxDataIN.ReadOnly = true;
-            this.tBoxDataIN.Size = new System.Drawing.Size(100, 20);
-            this.tBoxDataIN.TabIndex = 8;
-            this.tBoxDataIN.TextChanged += new System.EventHandler(this.tBoxDataIN_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(382, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Вес";
+            this.progressBar1.Size = new System.Drawing.Size(211, 23);
+            this.progressBar1.TabIndex = 17;
             // 
             // serialPort1
             // 
@@ -241,118 +121,375 @@ namespace WF_Com
             // 
             // chartWeight
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartWeight.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartWeight.Legends.Add(legend4);
-            this.chartWeight.Location = new System.Drawing.Point(278, 90);
+            chartArea1.Name = "ChartArea1";
+            this.chartWeight.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWeight.Legends.Add(legend1);
+            this.chartWeight.Location = new System.Drawing.Point(-10, 15);
             this.chartWeight.Name = "chartWeight";
-            series7.BorderWidth = 2;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Color = System.Drawing.Color.Blue;
-            series7.Legend = "Legend1";
-            series7.Name = "Текущий вес, г";
-            series8.BorderWidth = 2;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Color = System.Drawing.Color.Red;
-            series8.Legend = "Legend1";
-            series8.Name = "Убыль влаги, г";
-            this.chartWeight.Series.Add(series7);
-            this.chartWeight.Series.Add(series8);
-            this.chartWeight.Size = new System.Drawing.Size(488, 262);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Legend = "Legend1";
+            series1.Name = "Текущий вес, г";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "Убыль влаги, г";
+            this.chartWeight.Series.Add(series1);
+            this.chartWeight.Series.Add(series2);
+            this.chartWeight.Size = new System.Drawing.Size(694, 287);
             this.chartWeight.TabIndex = 11;
             this.chartWeight.Text = "chart1";
             // 
             // btnStartChartWeight
             // 
-            this.btnStartChartWeight.Location = new System.Drawing.Point(385, 378);
+            this.btnStartChartWeight.Location = new System.Drawing.Point(690, 72);
             this.btnStartChartWeight.Name = "btnStartChartWeight";
-            this.btnStartChartWeight.Size = new System.Drawing.Size(127, 23);
-            this.btnStartChartWeight.TabIndex = 12;
+            this.btnStartChartWeight.Size = new System.Drawing.Size(134, 49);
+            this.btnStartChartWeight.TabIndex = 16;
             this.btnStartChartWeight.Text = "Рисовать график";
-            this.btnStartChartWeight.UseVisualStyleBackColor = true;
             this.btnStartChartWeight.Click += new System.EventHandler(this.btnStartChartWeight_Click);
             // 
             // btnClearChartWeight
             // 
-            this.btnClearChartWeight.Location = new System.Drawing.Point(518, 378);
+            this.btnClearChartWeight.Location = new System.Drawing.Point(690, 178);
             this.btnClearChartWeight.Name = "btnClearChartWeight";
-            this.btnClearChartWeight.Size = new System.Drawing.Size(127, 23);
-            this.btnClearChartWeight.TabIndex = 13;
+            this.btnClearChartWeight.Size = new System.Drawing.Size(134, 49);
+            this.btnClearChartWeight.TabIndex = 17;
             this.btnClearChartWeight.Text = "Обнулить график";
-            this.btnClearChartWeight.UseVisualStyleBackColor = true;
             this.btnClearChartWeight.Click += new System.EventHandler(this.btnClearChartWeight_Click);
+            // 
+            // tBoxDataIN
+            // 
+            this.tBoxDataIN.Location = new System.Drawing.Point(677, 127);
+            this.tBoxDataIN.Name = "tBoxDataIN";
+            this.tBoxDataIN.Size = new System.Drawing.Size(97, 23);
+            this.tBoxDataIN.TabIndex = 18;
             // 
             // tBoxUbyl
             // 
-            this.tBoxUbyl.Location = new System.Drawing.Point(562, 64);
+            this.tBoxUbyl.Location = new System.Drawing.Point(677, 317);
             this.tBoxUbyl.Name = "tBoxUbyl";
-            this.tBoxUbyl.ReadOnly = true;
-            this.tBoxUbyl.Size = new System.Drawing.Size(100, 20);
-            this.tBoxUbyl.TabIndex = 14;
+            this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
+            this.tBoxUbyl.TabIndex = 19;
             // 
-            // label7
+            // cBoxBaudRate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(572, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Убыль влаги";
+            this.cBoxBaudRate.FormattingEnabled = true;
+            this.cBoxBaudRate.ItemHeight = 23;
+            this.cBoxBaudRate.Items.AddRange(new object[] {
+            "9600"});
+            this.cBoxBaudRate.Location = new System.Drawing.Point(126, 188);
+            this.cBoxBaudRate.Name = "cBoxBaudRate";
+            this.cBoxBaudRate.Size = new System.Drawing.Size(121, 29);
+            this.cBoxBaudRate.TabIndex = 17;
+            // 
+            // cBoxDataBits
+            // 
+            this.cBoxDataBits.FormattingEnabled = true;
+            this.cBoxDataBits.ItemHeight = 23;
+            this.cBoxDataBits.Items.AddRange(new object[] {
+            "8"});
+            this.cBoxDataBits.Location = new System.Drawing.Point(126, 237);
+            this.cBoxDataBits.Name = "cBoxDataBits";
+            this.cBoxDataBits.Size = new System.Drawing.Size(121, 29);
+            this.cBoxDataBits.TabIndex = 18;
+            // 
+            // cBoxStopBits
+            // 
+            this.cBoxStopBits.FormattingEnabled = true;
+            this.cBoxStopBits.ItemHeight = 23;
+            this.cBoxStopBits.Items.AddRange(new object[] {
+            "One"});
+            this.cBoxStopBits.Location = new System.Drawing.Point(126, 285);
+            this.cBoxStopBits.Name = "cBoxStopBits";
+            this.cBoxStopBits.Size = new System.Drawing.Size(121, 29);
+            this.cBoxStopBits.TabIndex = 19;
+            // 
+            // cBoxComPort
+            // 
+            this.cBoxComPort.FormattingEnabled = true;
+            this.cBoxComPort.ItemHeight = 23;
+            this.cBoxComPort.Location = new System.Drawing.Point(126, 140);
+            this.cBoxComPort.Name = "cBoxComPort";
+            this.cBoxComPort.Size = new System.Drawing.Size(121, 29);
+            this.cBoxComPort.TabIndex = 16;
+            // 
+            // cBoxParityBits
+            // 
+            this.cBoxParityBits.FormattingEnabled = true;
+            this.cBoxParityBits.ItemHeight = 23;
+            this.cBoxParityBits.Items.AddRange(new object[] {
+            "None"});
+            this.cBoxParityBits.Location = new System.Drawing.Point(126, 332);
+            this.cBoxParityBits.Name = "cBoxParityBits";
+            this.cBoxParityBits.Size = new System.Drawing.Size(121, 29);
+            this.cBoxParityBits.TabIndex = 20;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(30, 150);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel1.TabIndex = 20;
+            this.metroLabel1.Text = "COM PORT";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(30, 198);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(84, 19);
+            this.metroLabel2.TabIndex = 21;
+            this.metroLabel2.Text = "BAUDE RATE";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(30, 247);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(68, 19);
+            this.metroLabel3.TabIndex = 22;
+            this.metroLabel3.Text = "DATA BITS";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(30, 295);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel4.TabIndex = 23;
+            this.metroLabel4.Text = "STOP BITS";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(30, 342);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel5.TabIndex = 24;
+            this.metroLabel5.Text = "PARITY BITS";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(676, 105);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(98, 19);
+            this.metroLabel6.TabIndex = 25;
+            this.metroLabel6.Text = "Текущий вес, г";
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(677, 295);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(97, 19);
+            this.metroLabel7.TabIndex = 26;
+            this.metroLabel7.Text = "Убыль влаги, г";
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel8.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel8.Location = new System.Drawing.Point(196, 20);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(512, 57);
+            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel8.TabIndex = 27;
+            this.metroLabel8.Text = "Лабораторная работа\r\n\"Изучение различных способов сушки\"";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel9.Cursor = System.Windows.Forms.Cursors.Help;
+            this.metroLabel9.Location = new System.Drawing.Point(51, 105);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(165, 19);
+            this.metroLabel9.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel9.TabIndex = 28;
+            this.metroLabel9.Text = "Настройки COM-Порта";
+            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(396, 124);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(142, 19);
+            this.metroLabel10.TabIndex = 29;
+            this.metroLabel10.Text = "Соединение активно:";
+            // 
+            // lblStatusCom
+            // 
+            this.lblStatusCom.AutoSize = true;
+            this.lblStatusCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblStatusCom.Location = new System.Drawing.Point(419, 184);
+            this.lblStatusCom.Name = "lblStatusCom";
+            this.lblStatusCom.Size = new System.Drawing.Size(89, 39);
+            this.lblStatusCom.TabIndex = 30;
+            this.lblStatusCom.Text = "НЕТ";
+            // 
+            // metroTabControl1
+            // 
+            this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroTabControl1.Location = new System.Drawing.Point(20, 387);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(835, 337);
+            this.metroTabControl1.TabIndex = 31;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.chartWeight);
+            this.metroTabPage1.Controls.Add(this.btnStartChartWeight);
+            this.metroTabPage1.Controls.Add(this.btnClearChartWeight);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(827, 298);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "График с весом";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(827, 298);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "График с";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(827, 298);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "График с";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(676, 226);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel11.TabIndex = 32;
+            this.metroLabel11.Text = "Время сушки, с";
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(676, 164);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(125, 19);
+            this.metroLabel12.TabIndex = 33;
+            this.metroLabel12.Text = "Начальная масса, г";
+            // 
+            // metroTextBox1
+            // 
+            this.metroTextBox1.Location = new System.Drawing.Point(676, 186);
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.Size = new System.Drawing.Size(98, 23);
+            this.metroTextBox1.TabIndex = 34;
+            // 
+            // metroTextBox2
+            // 
+            this.metroTextBox2.Location = new System.Drawing.Point(677, 248);
+            this.metroTextBox2.Name = "metroTextBox2";
+            this.metroTextBox2.Size = new System.Drawing.Size(98, 23);
+            this.metroTextBox2.TabIndex = 35;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 424);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(875, 744);
+            this.Controls.Add(this.metroTextBox2);
+            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.metroLabel12);
+            this.Controls.Add(this.metroLabel11);
+            this.Controls.Add(this.metroTabControl1);
+            this.Controls.Add(this.lblStatusCom);
+            this.Controls.Add(this.metroLabel10);
+            this.Controls.Add(this.metroLabel9);
+            this.Controls.Add(this.metroLabel8);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.cBoxParityBits);
+            this.Controls.Add(this.cBoxComPort);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.cBoxStopBits);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.cBoxDataBits);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.cBoxBaudRate);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.tBoxUbyl);
-            this.Controls.Add(this.btnClearChartWeight);
-            this.Controls.Add(this.btnStartChartWeight);
-            this.Controls.Add(this.chartWeight);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.tBoxDataIN);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).EndInit();
+            this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox tBoxDataIN;
-        private System.Windows.Forms.Label label6;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.ComboBox cBoxParityBits;
-        private System.Windows.Forms.ComboBox cBoxStopBits;
-        private System.Windows.Forms.ComboBox cBoxDataBits;
-        private System.Windows.Forms.ComboBox cBoxBaudRate;
-        private System.Windows.Forms.ComboBox cBoxComPort;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWeight;
-        private System.Windows.Forms.Button btnStartChartWeight;
-        private System.Windows.Forms.Button btnClearChartWeight;
-        private System.Windows.Forms.TextBox tBoxUbyl;
-        private System.Windows.Forms.Label label7;
+        private MetroFramework.Controls.MetroProgressBar progressBar1;
+        private MetroFramework.Controls.MetroButton btnStartChartWeight;
+        private MetroFramework.Controls.MetroButton btnClearChartWeight;
+        private MetroFramework.Controls.MetroButton btnClose;
+        private MetroFramework.Controls.MetroButton btnOpen;
+        private MetroFramework.Controls.MetroTextBox tBoxDataIN;
+        private MetroFramework.Controls.MetroTextBox tBoxUbyl;
+        private MetroFramework.Controls.MetroComboBox cBoxBaudRate;
+        private MetroFramework.Controls.MetroComboBox cBoxDataBits;
+        private MetroFramework.Controls.MetroComboBox cBoxStopBits;
+        private MetroFramework.Controls.MetroComboBox cBoxComPort;
+        private MetroFramework.Controls.MetroComboBox cBoxParityBits;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private System.Windows.Forms.Label lblStatusCom;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox2;
     }
 }
 

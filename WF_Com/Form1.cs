@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
 using System.Windows.Forms.DataVisualization.Charting;
+using MetroFramework.Components;
+using MetroFramework.Forms;
 
 namespace WF_Com
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroForm
     {
         string dataIN;
         public Form1()
@@ -32,8 +34,8 @@ namespace WF_Com
 
             
 
-            chartWeight.ChartAreas[0].AxisY.Maximum = 200;
-            chartWeight.ChartAreas[0].AxisY.Minimum = -5;
+            chartWeight.ChartAreas[0].AxisY.Maximum = 150;
+            chartWeight.ChartAreas[0].AxisY.Minimum = 0;
 
             chartWeight.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
             chartWeight.Series[0].XValueType = ChartValueType.DateTime;
@@ -57,10 +59,16 @@ namespace WF_Com
 
                 serialPort1.Open();
                 progressBar1.Value = 100;
+                btnOpen.Enabled = false;
+                btnClose.Enabled = true;
+                lblStatusCom.Text = "ДА";
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnOpen.Enabled = true;
+                btnClose.Enabled = false;
+                lblStatusCom.Text = "НЕТ";
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -68,6 +76,9 @@ namespace WF_Com
             if (serialPort1.IsOpen)
                 serialPort1.Close();
             progressBar1.Value = 0;
+            btnOpen.Enabled = true;
+            btnClose.Enabled = false;
+            lblStatusCom.Text = "НЕТ";
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
