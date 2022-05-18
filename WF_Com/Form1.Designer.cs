@@ -321,7 +321,7 @@ namespace WF_Com
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(396, 124);
+            this.metroLabel10.Location = new System.Drawing.Point(401, 127);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(142, 19);
             this.metroLabel10.TabIndex = 29;
@@ -346,7 +346,7 @@ namespace WF_Com
             this.metroTabControl1.Location = new System.Drawing.Point(20, 387);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(835, 337);
+            this.metroTabControl1.Size = new System.Drawing.Size(840, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
             // metroTabPage1
@@ -357,7 +357,7 @@ namespace WF_Com
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(827, 298);
+            this.metroTabPage1.Size = new System.Drawing.Size(832, 298);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "График с весом";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -367,7 +367,7 @@ namespace WF_Com
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(827, 298);
+            this.metroTabPage2.Size = new System.Drawing.Size(832, 298);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "График с";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -377,7 +377,7 @@ namespace WF_Com
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(827, 298);
+            this.metroTabPage3.Size = new System.Drawing.Size(832, 298);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "График с";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -418,7 +418,7 @@ namespace WF_Com
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 744);
+            this.ClientSize = new System.Drawing.Size(880, 744);
             this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroLabel12);

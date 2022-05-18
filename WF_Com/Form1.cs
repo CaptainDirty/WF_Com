@@ -34,7 +34,7 @@ namespace WF_Com
 
             
 
-            chartWeight.ChartAreas[0].AxisY.Maximum = 150;
+            chartWeight.ChartAreas[0].AxisY.Maximum = 100;
             chartWeight.ChartAreas[0].AxisY.Minimum = 0;
 
             chartWeight.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
@@ -91,20 +91,38 @@ namespace WF_Com
         {
             try
             {
-                foreach (var item in dataIN)
+                var items = dataIN.Split(new string[] { "\u0001", "\u0002", "\u0003", "\u0004", "g", "U", "S", "?" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                items.ForEach(x => x.Trim());
+                items.ForEach(x => x.Replace("   ", ""));
+                items.ForEach(x => x.Replace(" ", ""));
+                
+                if (items.Count >= 1)
                 {
-                    if (item == 'g')
-                        tBoxDataIN.Text = (dataIN[dataIN.IndexOf(item) - 9].ToString()/* + dataIN[dataIN.IndexOf(item) - 8].ToString()*/ + dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1]).Replace(".", ",");
+                    tBoxDataIN.Text = items[0].Trim();
                 }
-                Thread.Sleep(10);
+
+
+
+                //foreach (var item in dataIN)
+                //{
+                //    if (item == 'g')
+                //        tBoxDataIN.Text = (dataIN[dataIN.IndexOf(item) - 9].ToString()/* + dataIN[dataIN.IndexOf(item) - 8].ToString()*/ + dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1]).Replace(".",",");
+                //}
+                Thread.Sleep(25);
             }
-            catch { }
+            catch(Exception ex) 
+            {
+                var t = 0;
+            
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime timeNow = DateTime.Now;
-            string value = tBoxDataIN.Text;
+            string value = tBoxDataIN.Text.Replace(",",".");
 
             chartWeight.Series[0].Points.AddXY(timeNow, value);
 
@@ -146,7 +164,7 @@ namespace WF_Com
 
         private void tBoxDataIN_TextChanged(object sender, EventArgs e)
         {
-            string noprobel = tBoxDataIN.Text;
+            string noprobel = tBoxDataIN.Text.Replace(".", ",").Trim();
             double result = 0;
             if (double.TryParse(noprobel, out result))
                 tBoxUbyl.Text = Convert.ToString(result - 20);
