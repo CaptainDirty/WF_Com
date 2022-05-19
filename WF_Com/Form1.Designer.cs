@@ -30,9 +30,9 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.btnOpen = new MetroFramework.Controls.MetroButton();
@@ -63,6 +63,7 @@ namespace WF_Com
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -75,10 +76,16 @@ namespace WF_Com
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.tBoxUbyl = new MetroFramework.Controls.MetroTextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnGraphWeightStart = new MetroFramework.Controls.MetroButton();
+            this.btnGraphWeightReset = new MetroFramework.Controls.MetroButton();
+            this.tBoxVlazh = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -127,19 +134,19 @@ namespace WF_Com
             // 
             // chartWeight
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartWeight.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartWeight.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chartWeight.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWeight.Legends.Add(legend1);
             this.chartWeight.Location = new System.Drawing.Point(-10, 15);
             this.chartWeight.Name = "chartWeight";
-            series4.BorderWidth = 2;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Blue;
-            series4.Legend = "Legend1";
-            series4.Name = "Текущий вес, г";
-            this.chartWeight.Series.Add(series4);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Legend = "Legend1";
+            series1.Name = "Текущий вес, г";
+            this.chartWeight.Series.Add(series1);
             this.chartWeight.Size = new System.Drawing.Size(1027, 287);
             this.chartWeight.TabIndex = 11;
             this.chartWeight.Text = "chart1";
@@ -168,6 +175,7 @@ namespace WF_Com
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.Size = new System.Drawing.Size(97, 23);
             this.tBoxDataIN.TabIndex = 18;
+            this.tBoxDataIN.TextChanged += new System.EventHandler(this.tBoxDataIN_TextChanged);
             // 
             // tBoxH2O
             // 
@@ -175,6 +183,7 @@ namespace WF_Com
             this.tBoxH2O.Name = "tBoxH2O";
             this.tBoxH2O.Size = new System.Drawing.Size(97, 23);
             this.tBoxH2O.TabIndex = 19;
+            this.tBoxH2O.TextChanged += new System.EventHandler(this.tBoxH2O_TextChanged);
             this.tBoxH2O.Click += new System.EventHandler(this.tBoxUbyl_Click);
             // 
             // cBoxBaudRate
@@ -403,6 +412,9 @@ namespace WF_Com
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.btnGraphWeightReset);
+            this.metroTabPage2.Controls.Add(this.btnGraphWeightStart);
+            this.metroTabPage2.Controls.Add(this.cartesianChart1);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
@@ -410,6 +422,14 @@ namespace WF_Com
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "График влажности";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(3, 3);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(1018, 268);
+            this.cartesianChart1.TabIndex = 2;
+            this.cartesianChart1.Text = "cartesianChart1";
             // 
             // metroTabPage3
             // 
@@ -468,6 +488,7 @@ namespace WF_Com
             this.tBoxFinishWeight.Name = "tBoxFinishWeight";
             this.tBoxFinishWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxFinishWeight.TabIndex = 37;
+            this.tBoxFinishWeight.TextChanged += new System.EventHandler(this.tBoxFinishWeight_TextChanged);
             // 
             // metroLabel14
             // 
@@ -515,11 +536,51 @@ namespace WF_Com
             this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
             this.tBoxUbyl.TabIndex = 41;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // btnGraphWeightStart
+            // 
+            this.btnGraphWeightStart.Location = new System.Drawing.Point(1041, 40);
+            this.btnGraphWeightStart.Name = "btnGraphWeightStart";
+            this.btnGraphWeightStart.Size = new System.Drawing.Size(116, 39);
+            this.btnGraphWeightStart.TabIndex = 3;
+            this.btnGraphWeightStart.Text = "Рисовать график";
+            this.btnGraphWeightStart.Click += new System.EventHandler(this.btnGraphWeightStart_Click);
+            // 
+            // btnGraphWeightReset
+            // 
+            this.btnGraphWeightReset.Location = new System.Drawing.Point(1041, 159);
+            this.btnGraphWeightReset.Name = "btnGraphWeightReset";
+            this.btnGraphWeightReset.Size = new System.Drawing.Size(116, 39);
+            this.btnGraphWeightReset.TabIndex = 5;
+            this.btnGraphWeightReset.Text = "Обнулить график";
+            this.btnGraphWeightReset.Click += new System.EventHandler(this.btnGraphWeightReset_Click);
+            // 
+            // tBoxVlazh
+            // 
+            this.tBoxVlazh.Location = new System.Drawing.Point(980, 310);
+            this.tBoxVlazh.Name = "tBoxVlazh";
+            this.tBoxVlazh.Size = new System.Drawing.Size(97, 23);
+            this.tBoxVlazh.TabIndex = 43;
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.AutoSize = true;
+            this.metroLabel18.Location = new System.Drawing.Point(980, 285);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel18.TabIndex = 44;
+            this.metroLabel18.Text = "Влажность";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 744);
+            this.Controls.Add(this.metroLabel18);
+            this.Controls.Add(this.tBoxVlazh);
             this.Controls.Add(this.metroLabel17);
             this.Controls.Add(this.tBoxUbyl);
             this.Controls.Add(this.metroLabel16);
@@ -557,6 +618,7 @@ namespace WF_Com
             ((System.ComponentModel.ISupportInitialize)(this.chartWeight)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,6 +667,12 @@ namespace WF_Com
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroTextBox tBoxUbyl;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private MetroFramework.Controls.MetroButton btnGraphWeightReset;
+        private MetroFramework.Controls.MetroButton btnGraphWeightStart;
+        private MetroFramework.Controls.MetroTextBox tBoxVlazh;
+        private MetroFramework.Controls.MetroLabel metroLabel18;
     }
 }
 

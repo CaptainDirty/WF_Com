@@ -1,4 +1,8 @@
-﻿using System;
+﻿using LiveCharts;
+using LiveCharts.Configurations;
+using LiveCharts.Wpf;
+using WF_Com.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +16,8 @@ using System.Threading;
 using System.Windows.Forms.DataVisualization.Charting;
 using MetroFramework.Components;
 using MetroFramework.Forms;
+using SeriesCollection = LiveCharts.SeriesCollection;
+using Axis = LiveCharts.Wpf.Axis;
 
 namespace WF_Com
 {
@@ -50,6 +56,8 @@ namespace WF_Com
 
             chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
             chartWeight.ChartAreas[0].AxisX.Interval = 5;
+
+            
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -107,8 +115,6 @@ namespace WF_Com
                     tBoxDataIN.Text = items[0].Trim();
                 }
 
-
-
                 //foreach (var item in dataIN)
                 //{
                 //    if (item == 'g')
@@ -117,7 +123,6 @@ namespace WF_Com
                 Thread.Sleep(25);
             }
             catch{}
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -168,6 +173,100 @@ namespace WF_Com
             //double ubyl;
             //ubyl = Convert.ToDouble(tBoxDataIN.Text.Trim().Replace(".",","))*2;
             //tBoxUbyl.Text = Convert.ToString(ubyl);
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                var Ch = tBoxDataIN.Text.Replace(".", ",");
+                double result=1;
+                if(double.TryParse(Ch,out result))
+                {
+                    result = Convert.ToDouble(tBoxDataIN.Text.Replace(".", ","));
+                    
+                }
+
+                //// Удалить первое значение
+                //if (cartesianChart1.Series[0].Values.Count >= 20)
+                //{
+                //    cartesianChart1.Series[0].Values.RemoveAt(0);
+                //    // cartesianChart.AxisX[0].Labels.RemoveAt(0);
+                //}
+                // Добавить новое значение
+                cartesianChart1.Series[0].Values.Add(new ChartModel
+                {
+                    DateTime = DateTime.Now,
+                    Value = result
+                });
+
+                // Добавляем новое значение 1 раз в секунду
+                Thread.Sleep(1000);
+            }
+        }
+
+        private void btnGraphWeightStart_Click(object sender, EventArgs e)
+        {
+            // Запуск в отдельном потоке
+            backgroundWorker1.RunWorkerAsync();
+
+            var mapper = Mappers.Xy<ChartModel>()
+                           .X(x => x.DateTime.Ticks)
+                           .Y(x => x.Value);
+
+            cartesianChart1.AxisX.Add(new Axis
+            {
+                LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+            });
+
+            cartesianChart1.Series = new SeriesCollection(mapper)
+            {
+                new LineSeries
+                {
+                    Values = new ChartValues<ChartModel>
+                    {
+                        new ChartModel
+                        {
+                            DateTime = DateTime.Now,
+                            Value = 0
+                        }
+                    }
+                }
+            };
+        }
+
+        private void btnGraphWeightReset_Click(object sender, EventArgs e)
+        {
+            cartesianChart1.Series[0].Values.Clear();
+        }
+
+        private void tBoxDataIN_TextChanged(object sender, EventArgs e)
+        {
+            if(tBoxDataIN.Text != "" && tBoxStartWeight.Text != "" && tBoxDataIN.Text != null && tBoxStartWeight.Text != null)
+            {
+                tBoxUbyl.Text = (double.Parse(tBoxStartWeight.Text) - double.Parse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""))).ToString();
+            }
+        }
+
+        private void tBoxFinishWeight_TextChanged(object sender, EventArgs e)
+        {
+            double resultStart = 0;
+            double resultFinish = 0;
+            if(double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxFinishWeight.Text, out resultFinish))
+            {
+                tBoxH2O.Text = (resultStart - resultFinish).ToString();
+            }
+        }
+
+        private void tBoxH2O_TextChanged(object sender, EventArgs e)
+        {
+            double resultStart = 0;
+            double resultNow = 0;
+            double h2o = 0;
+            if(double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow) && double.TryParse(tBoxH2O.Text, out h2o))
+            {
+                tBoxVlazh.Text = (((resultStart - resultNow) / h2o)*100).ToString();
+            }
         }
     }
 }
