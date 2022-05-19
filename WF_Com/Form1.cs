@@ -36,29 +36,11 @@ namespace WF_Com
             cBoxParityBits.SelectedIndex = 2;
         }
 
-        private int _countSeconds = 0;
-        //int limitWeight = 999;
-
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxComPort.Items.AddRange(ports);
-
-            
-
-            chartWeight.ChartAreas[0].AxisY.Maximum = 100;
-            chartWeight.ChartAreas[0].AxisY.Minimum = 0;
-
-            chartWeight.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
-            chartWeight.Series[0].XValueType = ChartValueType.DateTime;
-
-            chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
-            chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
-
-            chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chartWeight.ChartAreas[0].AxisX.Interval = 5;
-
-            
+ 
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -115,65 +97,9 @@ namespace WF_Com
                 {
                     tBoxDataIN.Text = items[0].Trim();
                 }
-
-                //foreach (var item in dataIN)
-                //{
-                //    if (item == 'g')
-                //        tBoxDataIN.Text = (dataIN[dataIN.IndexOf(item) - 9].ToString()/* + dataIN[dataIN.IndexOf(item) - 8].ToString()*/ + dataIN[dataIN.IndexOf(item) - 7].ToString() + dataIN[dataIN.LastIndexOf(item) - 6] + dataIN[dataIN.IndexOf(item) - 5] + dataIN[dataIN.IndexOf(item) - 4] + dataIN[dataIN.IndexOf(item) - 3] + dataIN[dataIN.IndexOf(item) - 2] + dataIN[dataIN.IndexOf(item) - 1]).Replace(".",",");
-                //}
                 Thread.Sleep(25);
             }
             catch{}
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            DateTime timeNow = DateTime.Now;
-            string value = tBoxDataIN.Text.Replace(",",".");
-
-            chartWeight.Series[0].Points.AddXY(timeNow, value);
-
-            _countSeconds ++;
-
-            if (_countSeconds == 550)
-            {
-                _countSeconds = 0;
-                chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
-                chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
-
-                chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-                chartWeight.ChartAreas[0].AxisX.Interval = 5;
-            }
-        }
-
-
-        private void btnClearChartWeight_Click(object sender, EventArgs e)
-        {
-            _countSeconds = 0;
-            chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
-            chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
-
-            chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chartWeight.ChartAreas[0].AxisX.Interval = 5;
-        }
-
-        private void btnStartChartWeight_Click(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-
-            _countSeconds = 0;
-            chartWeight.ChartAreas[0].AxisX.Minimum = DateTime.Now.ToOADate();
-            chartWeight.ChartAreas[0].AxisX.Maximum = DateTime.Now.AddMinutes(1).ToOADate();
-
-            chartWeight.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chartWeight.ChartAreas[0].AxisX.Interval = 5;
-        }
-
-        private void tBoxUbyl_Click(object sender, EventArgs e)
-        {
-            //double ubyl;
-            //ubyl = Convert.ToDouble(tBoxDataIN.Text.Trim().Replace(".",","))*2;
-            //tBoxUbyl.Text = Convert.ToString(ubyl);
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -187,7 +113,6 @@ namespace WF_Com
                     result = Convert.ToDouble(tBoxDataIN.Text.Replace(".", ","));
                     
                 }
-
                 //// Удалить первое значение
                 //if (cartesianChart1.Series[0].Values.Count >= 20)
                 //{
@@ -200,7 +125,6 @@ namespace WF_Com
                     DateTime = DateTime.Now,
                     Value = result
                 });
-
                 // Добавляем новое значение 1 раз в секунду
                 Thread.Sleep(1000);
             }
