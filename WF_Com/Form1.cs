@@ -23,10 +23,10 @@ namespace WF_Com
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
 
-            cBoxBaudRate.SelectedIndex = 0;
-            cBoxDataBits.SelectedIndex = 0;
+            cBoxBaudRate.SelectedIndex = 10;
+            cBoxDataBits.SelectedIndex = 4;
             cBoxStopBits.SelectedIndex = 0;
-            cBoxParityBits.SelectedIndex = 0;
+            cBoxParityBits.SelectedIndex = 2;
         }
 
         private int _countSeconds = 0;
@@ -116,11 +116,7 @@ namespace WF_Com
                 //}
                 Thread.Sleep(25);
             }
-            catch(Exception ex) 
-            {
-                var t = 0;
-            
-            }
+            catch{}
 
         }
 

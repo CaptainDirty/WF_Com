@@ -30,9 +30,9 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.btnOpen = new MetroFramework.Controls.MetroButton();
@@ -127,19 +127,19 @@ namespace WF_Com
             // 
             // chartWeight
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartWeight.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartWeight.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chartWeight.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartWeight.Legends.Add(legend4);
             this.chartWeight.Location = new System.Drawing.Point(-10, 15);
             this.chartWeight.Name = "chartWeight";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Blue;
-            series1.Legend = "Legend1";
-            series1.Name = "Текущий вес, г";
-            this.chartWeight.Series.Add(series1);
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Color = System.Drawing.Color.Blue;
+            series4.Legend = "Legend1";
+            series4.Name = "Текущий вес, г";
+            this.chartWeight.Series.Add(series4);
             this.chartWeight.Size = new System.Drawing.Size(1027, 287);
             this.chartWeight.TabIndex = 11;
             this.chartWeight.Text = "chart1";
@@ -182,7 +182,39 @@ namespace WF_Com
             this.cBoxBaudRate.FormattingEnabled = true;
             this.cBoxBaudRate.ItemHeight = 23;
             this.cBoxBaudRate.Items.AddRange(new object[] {
-            "9600"});
+            "75",
+            "110",
+            "134",
+            "150",
+            "300",
+            "600",
+            "1200",
+            "2400",
+            "4800",
+            "7200",
+            "9600",
+            "14400",
+            "19200",
+            "38400",
+            "57600",
+            "115200",
+            "128000",
+            "134400",
+            "161280",
+            "201600",
+            "230400",
+            "268800",
+            "403200",
+            "460800",
+            "614400",
+            "806400",
+            "921600",
+            "1228800",
+            "3000000",
+            "4000000",
+            "5000000",
+            "6000000",
+            "12000000"});
             this.cBoxBaudRate.Location = new System.Drawing.Point(126, 188);
             this.cBoxBaudRate.Name = "cBoxBaudRate";
             this.cBoxBaudRate.Size = new System.Drawing.Size(121, 29);
@@ -193,6 +225,10 @@ namespace WF_Com
             this.cBoxDataBits.FormattingEnabled = true;
             this.cBoxDataBits.ItemHeight = 23;
             this.cBoxDataBits.Items.AddRange(new object[] {
+            "4",
+            "5",
+            "6",
+            "7",
             "8"});
             this.cBoxDataBits.Location = new System.Drawing.Point(126, 237);
             this.cBoxDataBits.Name = "cBoxDataBits";
@@ -204,7 +240,8 @@ namespace WF_Com
             this.cBoxStopBits.FormattingEnabled = true;
             this.cBoxStopBits.ItemHeight = 23;
             this.cBoxStopBits.Items.AddRange(new object[] {
-            "One"});
+            "One",
+            "Two"});
             this.cBoxStopBits.Location = new System.Drawing.Point(126, 285);
             this.cBoxStopBits.Name = "cBoxStopBits";
             this.cBoxStopBits.Size = new System.Drawing.Size(121, 29);
@@ -224,6 +261,8 @@ namespace WF_Com
             this.cBoxParityBits.FormattingEnabled = true;
             this.cBoxParityBits.ItemHeight = 23;
             this.cBoxParityBits.Items.AddRange(new object[] {
+            "Xon/Xoff",
+            "Hardware",
             "None"});
             this.cBoxParityBits.Location = new System.Drawing.Point(126, 332);
             this.cBoxParityBits.Name = "cBoxParityBits";
@@ -321,7 +360,7 @@ namespace WF_Com
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(401, 127);
+            this.metroLabel10.Location = new System.Drawing.Point(391, 125);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(142, 19);
             this.metroLabel10.TabIndex = 29;
