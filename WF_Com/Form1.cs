@@ -24,6 +24,7 @@ namespace WF_Com
     public partial class Form1 : MetroForm
     {
         string dataIN;
+        bool flag = false;
         public Form1()
         {
             InitializeComponent();
@@ -233,10 +234,12 @@ namespace WF_Com
                     }
                 }
             };
+            flag = true;
         }
 
         private void btnGraphWeightReset_Click(object sender, EventArgs e)
         {
+            if(flag)
             cartesianChart1.Series[0].Values.Clear();
         }
 
