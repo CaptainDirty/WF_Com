@@ -40,7 +40,6 @@ namespace WF_Com
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxComPort.Items.AddRange(ports);
- 
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
