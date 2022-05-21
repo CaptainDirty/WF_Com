@@ -55,15 +55,15 @@ namespace WF_Com
             this.lblStatusCom = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.btnGraphWeightReset = new MetroFramework.Controls.MetroButton();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.btnGraphWeightStart = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.btnGraphWeightReset = new MetroFramework.Controls.MetroButton();
+            this.btnGraphWeightStart = new MetroFramework.Controls.MetroButton();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.tBoxStartWeight = new MetroFramework.Controls.MetroTextBox();
-            this.tBoxTimeToFresh = new MetroFramework.Controls.MetroTextBox();
+            this.tBoxTime = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.tBoxFinishWeight = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
@@ -74,9 +74,12 @@ namespace WF_Com
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tBoxVlazh = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.TimerSushka = new System.Windows.Forms.Timer(this.components);
+            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
             this.groupBox2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -344,7 +347,7 @@ namespace WF_Com
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 387);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1176, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
@@ -359,15 +362,6 @@ namespace WF_Com
             this.metroTabPage1.Text = "График с весом";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
-            // btnGraphWeightReset
-            // 
-            this.btnGraphWeightReset.Location = new System.Drawing.Point(802, 354);
-            this.btnGraphWeightReset.Name = "btnGraphWeightReset";
-            this.btnGraphWeightReset.Size = new System.Drawing.Size(116, 39);
-            this.btnGraphWeightReset.TabIndex = 5;
-            this.btnGraphWeightReset.Text = "СТОП";
-            this.btnGraphWeightReset.Click += new System.EventHandler(this.btnGraphWeightReset_Click);
-            // 
             // cartesianChart1
             // 
             this.cartesianChart1.Location = new System.Drawing.Point(-4, 3);
@@ -376,17 +370,9 @@ namespace WF_Com
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
-            // btnGraphWeightStart
-            // 
-            this.btnGraphWeightStart.Location = new System.Drawing.Point(668, 354);
-            this.btnGraphWeightStart.Name = "btnGraphWeightStart";
-            this.btnGraphWeightStart.Size = new System.Drawing.Size(116, 39);
-            this.btnGraphWeightStart.TabIndex = 3;
-            this.btnGraphWeightStart.Text = "СТАРТ";
-            this.btnGraphWeightStart.Click += new System.EventHandler(this.btnGraphWeightStart_Click);
-            // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.cartesianChart2);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
@@ -404,6 +390,24 @@ namespace WF_Com
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "График этапов сушки";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
+            // 
+            // btnGraphWeightReset
+            // 
+            this.btnGraphWeightReset.Location = new System.Drawing.Point(802, 354);
+            this.btnGraphWeightReset.Name = "btnGraphWeightReset";
+            this.btnGraphWeightReset.Size = new System.Drawing.Size(116, 39);
+            this.btnGraphWeightReset.TabIndex = 5;
+            this.btnGraphWeightReset.Text = "СТОП";
+            this.btnGraphWeightReset.Click += new System.EventHandler(this.btnGraphWeightReset_Click);
+            // 
+            // btnGraphWeightStart
+            // 
+            this.btnGraphWeightStart.Location = new System.Drawing.Point(668, 354);
+            this.btnGraphWeightStart.Name = "btnGraphWeightStart";
+            this.btnGraphWeightStart.Size = new System.Drawing.Size(116, 39);
+            this.btnGraphWeightStart.TabIndex = 3;
+            this.btnGraphWeightStart.Text = "СТАРТ";
+            this.btnGraphWeightStart.Click += new System.EventHandler(this.btnGraphWeightStart_Click);
             // 
             // metroLabel11
             // 
@@ -430,12 +434,12 @@ namespace WF_Com
             this.tBoxStartWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxStartWeight.TabIndex = 34;
             // 
-            // tBoxTimeToFresh
+            // tBoxTime
             // 
-            this.tBoxTimeToFresh.Location = new System.Drawing.Point(681, 237);
-            this.tBoxTimeToFresh.Name = "tBoxTimeToFresh";
-            this.tBoxTimeToFresh.Size = new System.Drawing.Size(98, 23);
-            this.tBoxTimeToFresh.TabIndex = 35;
+            this.tBoxTime.Location = new System.Drawing.Point(681, 237);
+            this.tBoxTime.Name = "tBoxTime";
+            this.tBoxTime.Size = new System.Drawing.Size(98, 23);
+            this.tBoxTime.TabIndex = 35;
             // 
             // metroLabel13
             // 
@@ -520,6 +524,19 @@ namespace WF_Com
             this.metroLabel18.TabIndex = 44;
             this.metroLabel18.Text = "Влажность, %";
             // 
+            // TimerSushka
+            // 
+            this.TimerSushka.Interval = 1000;
+            this.TimerSushka.Tick += new System.EventHandler(this.TimerSushka_Tick);
+            // 
+            // cartesianChart2
+            // 
+            this.cartesianChart2.Location = new System.Drawing.Point(-4, 1);
+            this.cartesianChart2.Name = "cartesianChart2";
+            this.cartesianChart2.Size = new System.Drawing.Size(1176, 296);
+            this.cartesianChart2.TabIndex = 3;
+            this.cartesianChart2.Text = "cartesianChart2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,7 +553,7 @@ namespace WF_Com
             this.Controls.Add(this.metroLabel14);
             this.Controls.Add(this.tBoxFinishWeight);
             this.Controls.Add(this.metroLabel13);
-            this.Controls.Add(this.tBoxTimeToFresh);
+            this.Controls.Add(this.tBoxTime);
             this.Controls.Add(this.tBoxStartWeight);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroLabel11);
@@ -565,6 +582,7 @@ namespace WF_Com
             this.groupBox2.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,7 +619,7 @@ namespace WF_Com
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroTextBox tBoxStartWeight;
-        private MetroFramework.Controls.MetroTextBox tBoxTimeToFresh;
+        private MetroFramework.Controls.MetroTextBox tBoxTime;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox tBoxFinishWeight;
         private MetroFramework.Controls.MetroLabel metroLabel14;
@@ -615,6 +633,8 @@ namespace WF_Com
         private MetroFramework.Controls.MetroButton btnGraphWeightStart;
         private MetroFramework.Controls.MetroTextBox tBoxVlazh;
         private MetroFramework.Controls.MetroLabel metroLabel18;
+        private System.Windows.Forms.Timer TimerSushka;
+        private LiveCharts.WinForms.CartesianChart cartesianChart2;
     }
 }
 
