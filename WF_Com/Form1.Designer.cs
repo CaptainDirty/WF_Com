@@ -68,7 +68,6 @@ namespace WF_Com
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.tBoxFinishWeight = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.tBoxUbyl = new MetroFramework.Controls.MetroTextBox();
@@ -108,7 +107,7 @@ namespace WF_Com
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(95, 23);
             this.btnOpen.TabIndex = 18;
-            this.btnOpen.Text = "Соеденить";
+            this.btnOpen.Text = "Соединить";
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // progressBar1
@@ -478,21 +477,11 @@ namespace WF_Com
             this.metroLabel14.TabIndex = 38;
             this.metroLabel14.Text = "Мониторинг:";
             // 
-            // metroLabel15
-            // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel15.Location = new System.Drawing.Point(802, 105);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(158, 25);
-            this.metroLabel15.TabIndex = 39;
-            this.metroLabel15.Text = "Введите значения:";
-            // 
             // metroLabel16
             // 
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel16.Location = new System.Drawing.Point(980, 105);
+            this.metroLabel16.Location = new System.Drawing.Point(856, 105);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(178, 25);
             this.metroLabel16.TabIndex = 40;
@@ -552,7 +541,6 @@ namespace WF_Com
             this.Controls.Add(this.tBoxUbyl);
             this.Controls.Add(this.btnGraphWeightStart);
             this.Controls.Add(this.metroLabel16);
-            this.Controls.Add(this.metroLabel15);
             this.Controls.Add(this.metroLabel14);
             this.Controls.Add(this.tBoxFinishWeight);
             this.Controls.Add(this.metroLabel13);
@@ -627,7 +615,6 @@ namespace WF_Com
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox tBoxFinishWeight;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroTextBox tBoxUbyl;
