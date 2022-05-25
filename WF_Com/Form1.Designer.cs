@@ -57,6 +57,7 @@ namespace WF_Com
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.btnGraphWeightReset = new MetroFramework.Controls.MetroButton();
             this.btnGraphWeightStart = new MetroFramework.Controls.MetroButton();
@@ -75,7 +76,6 @@ namespace WF_Com
             this.tBoxVlazh = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.TimerSushka = new System.Windows.Forms.Timer(this.components);
-            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
             this.groupBox2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -345,10 +345,10 @@ namespace WF_Com
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(20, 387);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 407);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(1176, 337);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(1216, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
             // metroTabPage1
@@ -357,7 +357,7 @@ namespace WF_Com
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1168, 298);
+            this.metroTabPage1.Size = new System.Drawing.Size(1208, 298);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "График с весом";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -366,27 +366,37 @@ namespace WF_Com
             // 
             this.cartesianChart1.Location = new System.Drawing.Point(-4, 3);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(1176, 296);
+            this.cartesianChart1.Size = new System.Drawing.Size(1216, 296);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.CausesValidation = false;
             this.metroTabPage2.Controls.Add(this.cartesianChart2);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1168, 298);
+            this.metroTabPage2.Size = new System.Drawing.Size(1208, 298);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "График влажности";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             // 
+            // cartesianChart2
+            // 
+            this.cartesianChart2.Location = new System.Drawing.Point(-4, 1);
+            this.cartesianChart2.Name = "cartesianChart2";
+            this.cartesianChart2.Size = new System.Drawing.Size(1176, 296);
+            this.cartesianChart2.TabIndex = 3;
+            this.cartesianChart2.Text = "cartesianChart2";
+            // 
             // metroTabPage3
             // 
+            this.metroTabPage3.CausesValidation = false;
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(1168, 298);
+            this.metroTabPage3.Size = new System.Drawing.Size(1208, 298);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "График этапов сушки";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -529,18 +539,11 @@ namespace WF_Com
             this.TimerSushka.Interval = 1000;
             this.TimerSushka.Tick += new System.EventHandler(this.TimerSushka_Tick);
             // 
-            // cartesianChart2
-            // 
-            this.cartesianChart2.Location = new System.Drawing.Point(-4, 1);
-            this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(1176, 296);
-            this.cartesianChart2.TabIndex = 3;
-            this.cartesianChart2.Text = "cartesianChart2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1216, 744);
             this.Controls.Add(this.metroLabel18);
             this.Controls.Add(this.tBoxVlazh);
@@ -577,6 +580,7 @@ namespace WF_Com
             this.Controls.Add(this.tBoxH2O);
             this.Controls.Add(this.tBoxDataIN);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);

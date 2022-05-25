@@ -21,7 +21,7 @@ using Axis = LiveCharts.Wpf.Axis;
 
 namespace WF_Com
 {
-    public partial class Form1 : MetroForm
+    public partial class Form1 : Form
     {
         string dataIN;
         bool flag = false;
@@ -31,6 +31,7 @@ namespace WF_Com
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            MaximizeBox = false;
 
             cBoxBaudRate.SelectedIndex = 10;
             cBoxDataBits.SelectedIndex = 4;
@@ -88,7 +89,7 @@ namespace WF_Com
         }
 
         private void ShowData(object sender, EventArgs e)
-        {
+        {       
             try
             {
                 var items = dataIN.Split(new string[] { "\u0001", "\u0002", "\u0003", "\u0004", "g", "U", "S", "?" }, StringSplitOptions.RemoveEmptyEntries).ToList();
