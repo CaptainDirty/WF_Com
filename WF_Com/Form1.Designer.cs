@@ -30,6 +30,7 @@ namespace WF_Com
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.btnOpen = new MetroFramework.Controls.MetroButton();
@@ -301,10 +302,10 @@ namespace WF_Com
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel8.Location = new System.Drawing.Point(196, 20);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(512, 57);
+            this.metroLabel8.Size = new System.Drawing.Size(539, 57);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel8.TabIndex = 27;
-            this.metroLabel8.Text = "Лабораторная работа\r\n\"Изучение различных способов сушки\"";
+            this.metroLabel8.Text = "Лабораторная работа\r\n\"Исследование режимов и способов сушки влажных материалов\"";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // metroLabel9
@@ -346,7 +347,7 @@ namespace WF_Com
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 407);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1216, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
@@ -569,7 +570,9 @@ namespace WF_Com
             this.Controls.Add(this.tBoxDataIN);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.Text = "Исследование режимов и способов сушки влажных материалов";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
