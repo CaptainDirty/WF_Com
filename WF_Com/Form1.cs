@@ -43,9 +43,6 @@ namespace WF_Com
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxComPort.Items.AddRange(ports);
-
-            // Запуск в отдельном потоке
-            backgroundWorker1.RunWorkerAsync();
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -89,7 +86,7 @@ namespace WF_Com
         }
 
         private void ShowData(object sender, EventArgs e)
-        {       
+        {
             try
             {
                 var items = dataIN.Split(new string[] { "\u0001", "\u0002", "\u0003", "\u0004", "g", "U", "S", "?" }, StringSplitOptions.RemoveEmptyEntries).ToList();
@@ -109,46 +106,8 @@ namespace WF_Com
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            while (true)
+            while (flag)
             {
-                //// Удалить первое значение
-                //if (cartesianChart1.Series[0].Values.Count >= 20)
-                //{
-                //    cartesianChart1.Series[0].Values.RemoveAt(0);
-                //    // cartesianChart.AxisX[0].Labels.RemoveAt(0);
-                //}
-                // Добавить новое значение
-                if (flag)
-                {
-                    var Ch = tBoxDataIN.Text.Replace(".", ",");
-                    double result = 1;
-
-                    if (double.TryParse(Ch, out result))
-                    {
-                        result = Convert.ToDouble(tBoxDataIN.Text.Replace(".", ","));
-
-                    }
-
-                    cartesianChart1.Series[0].Values.Add(new ChartModel
-                    {
-                        DateTime = DateTime.Now,
-                        Value = result
-                    });
-
-                    var Ch2 = tBoxVlazh.Text.Replace(".", ",");
-                    double result2 = 1;
-
-                    if (double.TryParse(Ch2, out result2))
-                    {
-                        result2 = Convert.ToDouble(tBoxVlazh.Text.Replace(".", ","));
-                    }
-
-                    cartesianChart2.Series[0].Values.Add(new ChartModel
-                    {
-                        DateTime = DateTime.Now,
-                        Value = result2
-                    });
-                }
                 // Добавляем новое значение 1 раз в секунду 
                 Thread.Sleep(1000);
             }
@@ -161,48 +120,73 @@ namespace WF_Com
                 tBoxStartWeight.Text = tBoxDataIN.Text;
 
                 var mapper = Mappers.Xy<ChartModel>()
-                               .X(x => x.DateTime.Ticks)
-                               .Y(x => x.Value);
+                   .X(x => x.DateTime.Ticks)
+                   .Y(x => x.Value);
 
-                cartesianChart1.AxisX.Add(new Axis
+                if (cartesianChart1.Series.Any())
                 {
-                    LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                });
+                    cartesianChart1.Series.Clear();
+                }
+
+                if (cartesianChart1.AxisX.Any())
+                {
+                    cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                }
+                else
+                {
+                    cartesianChart1.AxisX.Add(new Axis
+                    {
+                        LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                    });
+                }
 
                 cartesianChart1.Series = new SeriesCollection(mapper)
-            {
-                new LineSeries
                 {
-                    Values = new ChartValues<ChartModel>
+                    new LineSeries
                     {
-                        new ChartModel
+                        Values = new ChartValues<ChartModel>
                         {
-                            DateTime = DateTime.Now,
-                            Value = 0
+                            new ChartModel
+                            {
+                                DateTime = DateTime.Now,
+                                Value = 0
+                            }
                         }
                     }
-                }
-            };
+                };
 
-                cartesianChart2.AxisX.Add(new Axis
+
+                if (cartesianChart2.Series.Any())
                 {
-                    LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                });
+                    cartesianChart2.Series.Clear();
+                }
+
+                if (cartesianChart2.AxisX.Any())
+                {
+                    cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                }
+                else
+                {
+                    cartesianChart2.AxisX.Add(new Axis
+                    {
+                        LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                    });
+                }
 
                 cartesianChart2.Series = new SeriesCollection(mapper)
-            {
-                new LineSeries
                 {
-                    Values = new ChartValues<ChartModel>
+                    new LineSeries
                     {
-                        new ChartModel
+                        Values = new ChartValues<ChartModel>
                         {
-                            DateTime = DateTime.Now,
-                            Value = 0
+                            new ChartModel
+                            {
+                                DateTime = DateTime.Now,
+                                Value = 0
+                            }
                         }
                     }
-                }
-            };
+                };
 
                 time = new DateTime(0001, 01, 01, 00, 00, 00);
 
@@ -218,12 +202,6 @@ namespace WF_Com
             {
                 tBoxFinishWeight.Text = tBoxDataIN.Text;
 
-                //cartesianChart1.Series[0].Values.Clear();
-                cartesianChart1.AxisX.Clear();
-                cartesianChart1.Series.Clear();
-
-                cartesianChart2.AxisX.Clear();
-                cartesianChart2.Series.Clear();
                 flag = false;
 
                 TimerSushka.Stop();
@@ -235,6 +213,13 @@ namespace WF_Com
             if (tBoxDataIN.Text != "" && tBoxStartWeight.Text != "" && tBoxDataIN.Text != null && tBoxStartWeight.Text != null)
             {
                 tBoxUbyl.Text = (double.Parse(tBoxStartWeight.Text) - double.Parse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""))).ToString();
+            }
+
+            double resultStart = 0;
+            double resultNow = 0;
+            if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
+            {
+                tBoxVlazh.Text = (((resultStart - resultNow) / resultStart) * 100).ToString();
             }
         }
 
@@ -250,19 +235,48 @@ namespace WF_Com
 
         private void tBoxH2O_TextChanged(object sender, EventArgs e)
         {
-            double resultStart = 0;
-            double resultNow = 0;
-            double h2o = 0;
-            if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow) && double.TryParse(tBoxH2O.Text, out h2o))
-            {
-                tBoxVlazh.Text = (((resultStart - resultNow) / h2o) * 100).ToString();
-            }
+            //double resultStart = 0;
+            //double resultNow = 0;
+            //double h2o = 0;
+            //if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow) && double.TryParse(tBoxH2O.Text, out h2o))
+            //{
+            //    tBoxVlazh.Text = (((resultStart - resultNow) / h2o) * 100).ToString();
+            //}
         }
 
         private void TimerSushka_Tick(object sender, EventArgs e)
         {
             time = time.AddSeconds(1);
             tBoxTime.Text = time.ToString("HH:mm:ss");
+
+            var Ch = tBoxDataIN.Text.Replace(".", ",");
+            double result = 1;
+
+            if (double.TryParse(Ch, out result))
+            {
+                result = Convert.ToDouble(tBoxDataIN.Text.Replace(".", ","));
+
+            }
+
+            cartesianChart1.Series[0].Values.Add(new ChartModel
+            {
+                DateTime = DateTime.Now,
+                Value = result
+            });
+
+            var Ch2 = tBoxVlazh.Text.Replace(".", ",");
+            double result2 = 1;
+
+            if (double.TryParse(Ch2, out result2))
+            {
+                result2 = Convert.ToDouble(tBoxVlazh.Text.Replace(".", ","));
+            }
+
+            cartesianChart2.Series[0].Values.Add(new ChartModel
+            {
+                DateTime = DateTime.Now,
+                Value = result2
+            });
         }
     }
 }

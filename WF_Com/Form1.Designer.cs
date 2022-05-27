@@ -346,7 +346,7 @@ namespace WF_Com
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 407);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1216, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
@@ -365,7 +365,7 @@ namespace WF_Com
             // 
             this.cartesianChart1.Location = new System.Drawing.Point(-4, 3);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(1216, 296);
+            this.cartesianChart1.Size = new System.Drawing.Size(1216, 295);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -385,7 +385,7 @@ namespace WF_Com
             // 
             this.cartesianChart2.Location = new System.Drawing.Point(-4, 1);
             this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(1176, 296);
+            this.cartesianChart2.Size = new System.Drawing.Size(1216, 297);
             this.cartesianChart2.TabIndex = 3;
             this.cartesianChart2.Text = "cartesianChart2";
             // 
