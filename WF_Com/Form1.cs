@@ -92,7 +92,7 @@ namespace WF_Com
                 var items = dataIN.Split(new string[] { "\u0001", "\u0002", "\u0003", "\u0004", "g", "U", "S", "?" }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
                 items.ForEach(x => x.Trim());
-                items.ForEach(x => x.Replace("   ", ""));
+                items.ForEach(x => x.Replace(" ", ""));
                 items.ForEach(x => x.Replace(" ", ""));
 
                 if (items.Count >= 1)
@@ -106,11 +106,11 @@ namespace WF_Com
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            while (flag)
-            {
-                // Добавляем новое значение 1 раз в секунду 
-                Thread.Sleep(1000);
-            }
+            //while (flag)
+            //{
+            // // Добавляем новое значение 1 раз в секунду
+            // Thread.Sleep(1000);
+            //}
         }
 
         private void btnGraphWeightStart_Click(object sender, EventArgs e)
@@ -120,8 +120,8 @@ namespace WF_Com
                 tBoxStartWeight.Text = tBoxDataIN.Text;
 
                 var mapper = Mappers.Xy<ChartModel>()
-                   .X(x => x.DateTime.Ticks)
-                   .Y(x => x.Value);
+                .X(x => x.DateTime.Ticks)
+                .Y(x => x.Value);
 
                 if (cartesianChart1.Series.Any())
                 {
@@ -141,19 +141,19 @@ namespace WF_Com
                 }
 
                 cartesianChart1.Series = new SeriesCollection(mapper)
-                {
-                    new LineSeries
-                    {
-                        Values = new ChartValues<ChartModel>
-                        {
-                            new ChartModel
-                            {
-                                DateTime = DateTime.Now,
-                                Value = 0
-                            }
-                        }
-                    }
-                };
+{
+new LineSeries
+{
+Values = new ChartValues<ChartModel>
+{
+new ChartModel
+{
+DateTime = DateTime.Now,
+Value = 0
+}
+}
+}
+};
 
 
                 if (cartesianChart2.Series.Any())
@@ -174,19 +174,52 @@ namespace WF_Com
                 }
 
                 cartesianChart2.Series = new SeriesCollection(mapper)
+{
+new LineSeries
+{
+Values = new
+ChartValues<ChartModel>
+{
+new ChartModel
+{
+DateTime = DateTime.Now,
+Value = 0
+}
+}
+}
+};
+
+                if (cartesianChart3.Series.Any())
                 {
-                    new LineSeries
+                    cartesianChart3.Series.Clear();
+                }
+
+                if (cartesianChart3.AxisX.Any())
+                {
+                    cartesianChart3.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                }
+                else
+                {
+                    cartesianChart3.AxisX.Add(new Axis
                     {
-                        Values = new ChartValues<ChartModel>
-                        {
-                            new ChartModel
-                            {
-                                DateTime = DateTime.Now,
-                                Value = 0
-                            }
-                        }
-                    }
-                };
+                        LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                    });
+                }
+
+                cartesianChart3.Series = new SeriesCollection(mapper)
+{
+new LineSeries
+{
+Values = new ChartValues<ChartModel>
+{
+new ChartModel
+{
+DateTime = DateTime.Now,
+Value = 0
+}
+}
+}
+};
 
                 time = new DateTime(0001, 01, 01, 00, 00, 00);
 
@@ -240,7 +273,7 @@ namespace WF_Com
             //double h2o = 0;
             //if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow) && double.TryParse(tBoxH2O.Text, out h2o))
             //{
-            //    tBoxVlazh.Text = (((resultStart - resultNow) / h2o) * 100).ToString();
+            // tBoxVlazh.Text = (((resultStart - resultNow) / h2o) * 100).ToString();
             //}
         }
 
@@ -276,6 +309,27 @@ namespace WF_Com
             {
                 DateTime = DateTime.Now,
                 Value = result2
+            });
+
+            string Ch3 = "";
+
+            if (cartesianChart2.Series[0].Values.Count >= 3)
+            {
+                Ch3 = (((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 1]).Value - ((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 2]).Value).ToString();
+            }
+
+
+            double result3 = 1;
+
+            if (double.TryParse(Ch3, out result3))
+            {
+                result3 = double.Parse(Ch3);
+            }
+
+            cartesianChart3.Series[0].Values.Add(new ChartModel
+            {
+                DateTime = DateTime.Now,
+                Value = result3
             });
         }
 

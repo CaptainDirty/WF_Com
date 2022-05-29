@@ -79,10 +79,12 @@ namespace WF_Com
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.tBoxDry = new MetroFramework.Controls.MetroTextBox();
+            this.cartesianChart3 = new LiveCharts.WinForms.CartesianChart();
             this.groupBox2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            this.metroTabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -350,7 +352,7 @@ namespace WF_Com
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 407);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1216, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
@@ -396,6 +398,7 @@ namespace WF_Com
             // metroTabPage3
             // 
             this.metroTabPage3.CausesValidation = false;
+            this.metroTabPage3.Controls.Add(this.cartesianChart3);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage3.Name = "metroTabPage3";
@@ -560,6 +563,14 @@ namespace WF_Com
             this.tBoxDry.TabIndex = 47;
             this.tBoxDry.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxDry_KeyPress);
             // 
+            // cartesianChart3
+            // 
+            this.cartesianChart3.Location = new System.Drawing.Point(-4, 1);
+            this.cartesianChart3.Name = "cartesianChart3";
+            this.cartesianChart3.Size = new System.Drawing.Size(1216, 297);
+            this.cartesianChart3.TabIndex = 4;
+            this.cartesianChart3.Text = "cartesianChart3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,6 +623,7 @@ namespace WF_Com
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,6 +678,7 @@ namespace WF_Com
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel19;
         private MetroFramework.Controls.MetroTextBox tBoxDry;
+        private LiveCharts.WinForms.CartesianChart cartesianChart3;
     }
 }
 
