@@ -215,11 +215,11 @@ namespace WF_Com
                 tBoxUbyl.Text = (double.Parse(tBoxStartWeight.Text) - double.Parse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""))).ToString();
             }
 
-            double resultStart = 0;
+            double resultDry = 0;
             double resultNow = 0;
-            if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
+            if (double.TryParse(tBoxDry.Text, out resultDry) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
             {
-                tBoxVlazh.Text = (((resultStart - resultNow) / resultStart) * 100).ToString();
+                tBoxVlazh.Text = (((resultNow - resultDry) / resultDry) * 100).ToString();
             }
         }
 
@@ -277,6 +277,15 @@ namespace WF_Com
                 DateTime = DateTime.Now,
                 Value = result2
             });
+        }
+
+        private void tBoxDry_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            {
+                e.Handled = true;
+            }
         }
     }
 }
