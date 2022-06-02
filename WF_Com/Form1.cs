@@ -243,26 +243,28 @@ Value = 0
 
         private void tBoxDataIN_TextChanged(object sender, EventArgs e)
         {
-            if (tBoxDataIN.Text != "" && tBoxStartWeight.Text != "" && tBoxDataIN.Text != null && tBoxStartWeight.Text != null)
-            {
-                tBoxUbyl.Text = (double.Parse(tBoxStartWeight.Text) - double.Parse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""))).ToString();
-            }
-
             double resultDry = 0;
             double resultNow = 0;
+            double resultStart = 0;
             if (double.TryParse(tBoxDry.Text, out resultDry) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
             {
-                tBoxVlazh.Text = (((resultNow - resultDry) / resultDry) * 100).ToString();
+                tBoxVlazh.Text = Math.Round((((resultNow - resultDry) / resultDry) * 100), 2).ToString();        
             }
+            if(double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
+            {
+                tBoxUbyl.Text = (resultStart - resultNow).ToString();
+            }
+
         }
 
         private void tBoxFinishWeight_TextChanged(object sender, EventArgs e)
         {
-            double resultStart = 0;
-            double resultFinish = 0;
-            if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxFinishWeight.Text, out resultFinish))
+            double resultStart;
+            double resultFinish;
+            if (double.TryParse(tBoxStartWeight.Text.Replace(".", ","), out resultStart) && double.TryParse(tBoxFinishWeight.Text.Replace(".", ","), out resultFinish))
             {
-                tBoxH2O.Text = (resultStart - resultFinish).ToString();
+                tBoxH2O.Text = Math.Round((resultStart - resultFinish), 2).ToString();
+                //tBoxUbyl.Text = Math.Round((resultStart - resultFinish), 2).ToString();
             }
         }
 
@@ -340,6 +342,17 @@ Value = 0
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnResetValues_Click(object sender, EventArgs e)
+        {
+            tBoxStartWeight.Text = "";
+            tBoxFinishWeight.Text = "";
+            tBoxTime.Text = "";
+            tBoxDry.Text = "";
+            tBoxH2O.Text = "";
+            tBoxUbyl.Text = "";
+            tBoxVlazh.Text = "";
         }
     }
 }
