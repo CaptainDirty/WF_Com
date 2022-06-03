@@ -654,6 +654,7 @@ namespace WF_Com
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Исследование режимов и способов сушки влажных материалов";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);

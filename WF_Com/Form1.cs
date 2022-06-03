@@ -124,117 +124,123 @@ namespace WF_Com
 
         private void btnGraphWeightStart_Click(object sender, EventArgs e)
         {
-            if (!flag)
+            if (progressBar1.Value==100)
             {
-                tBoxStartWeight.Text = tBoxDataIN.Text;
-
-                var mapper = Mappers.Xy<ChartModel>()
-                .X(x => x.DateTime.Ticks)
-                .Y(x => x.Value);
-
-                if (cartesianChart1.Series.Any())
+                if (!flag)
                 {
-                    cartesianChart1.Series.Clear();
-                }
+                    tBoxStartWeight.Text = tBoxDataIN.Text;
 
-                if (cartesianChart1.AxisX.Any())
-                {
-                    cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
-                }
-                else
-                {
-                    cartesianChart1.AxisX.Add(new Axis
+                    var mapper = Mappers.Xy<ChartModel>()
+                    .X(x => x.DateTime.Ticks)
+                    .Y(x => x.Value);
+
+                    if (cartesianChart1.Series.Any())
                     {
-                        LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                    });
-                }
+                        cartesianChart1.Series.Clear();
+                    }
 
-                cartesianChart1.Series = new SeriesCollection(mapper)
-{
-new LineSeries
-{
-Values = new ChartValues<ChartModel>
-{
-new ChartModel
-{
-DateTime = DateTime.Now,
-Value = 0
-}
-}
-}
-};
-
-
-                if (cartesianChart2.Series.Any())
-                {
-                    cartesianChart2.Series.Clear();
-                }
-
-                if (cartesianChart2.AxisX.Any())
-                {
-                    cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
-                }
-                else
-                {
-                    cartesianChart2.AxisX.Add(new Axis
+                    if (cartesianChart1.AxisX.Any())
                     {
-                        LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                    });
-                }
-
-                cartesianChart2.Series = new SeriesCollection(mapper)
-{
-new LineSeries
-{
-Values = new
-ChartValues<ChartModel>
-{
-new ChartModel
-{
-DateTime = DateTime.Now,
-Value = 0
-}
-}
-}
-};
-
-                if (cartesianChart3.Series.Any())
-                {
-                    cartesianChart3.Series.Clear();
-                }
-
-                if (cartesianChart3.AxisX.Any())
-                {
-                    cartesianChart3.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
-                }
-                else
-                {
-                    cartesianChart3.AxisX.Add(new Axis
+                        cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                    }
+                    else
                     {
-                        LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                    });
+                        cartesianChart1.AxisX.Add(new Axis
+                        {
+                            LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                        });
+                    }
+
+                    cartesianChart1.Series = new SeriesCollection(mapper)
+                {
+                    new LineSeries
+                    {
+                        Values = new ChartValues<ChartModel>
+                        {
+                            new ChartModel
+                            {
+                                DateTime = DateTime.Now,
+                                Value = 0
+                            }
+                        }
+                    }
+                };
+
+
+                    if (cartesianChart2.Series.Any())
+                    {
+                        cartesianChart2.Series.Clear();
+                    }
+
+                    if (cartesianChart2.AxisX.Any())
+                    {
+                        cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                    }
+                    else
+                    {
+                        cartesianChart2.AxisX.Add(new Axis
+                        {
+                            LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                        });
+                    }
+
+                    cartesianChart2.Series = new SeriesCollection(mapper)
+                {
+                    new LineSeries
+                    {
+                        Values = new ChartValues<ChartModel>
+                        {
+                            new ChartModel
+                            {
+                                DateTime = DateTime.Now,
+                                Value = 0
+                            }
+                        }
+                    }
+                };
+
+                    if (cartesianChart3.Series.Any())
+                    {
+                        cartesianChart3.Series.Clear();
+                    }
+
+                    if (cartesianChart3.AxisX.Any())
+                    {
+                        cartesianChart3.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                    }
+                    else
+                    {
+                        cartesianChart3.AxisX.Add(new Axis
+                        {
+                            LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                        });
+                    }
+
+                    cartesianChart3.Series = new SeriesCollection(mapper)
+                {
+                    new LineSeries
+                        {
+                            Values = new ChartValues<ChartModel>
+                            {
+                                new ChartModel
+                                {
+                                    DateTime = DateTime.Now,
+                                    Value = 0
+                                }
+                            }
+                    }
+                };
+
+                    time = new DateTime(0001, 01, 01, 00, 00, 00);
+
+                    TimerSushka.Start();
+
+                    flag = true;
                 }
-
-                cartesianChart3.Series = new SeriesCollection(mapper)
-{
-new LineSeries
-{
-Values = new ChartValues<ChartModel>
-{
-new ChartModel
-{
-DateTime = DateTime.Now,
-Value = 0
-}
-}
-}
-};
-
-                time = new DateTime(0001, 01, 01, 00, 00, 00);
-
-                TimerSushka.Start();
-
-                flag = true;
+            }
+            else
+            {
+                MessageBox.Show("Для начала работы необходимо настроить активное соединение с COM-портом");
             }
         }
 
@@ -388,6 +394,12 @@ Value = 0
                 cBoxParityBits.Visible = false;
                 cBoxStopBits.Visible = false;
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (serialPort1.IsOpen)
+                serialPort1.Close();
         }
     }
 }
