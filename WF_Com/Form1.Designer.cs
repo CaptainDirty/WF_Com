@@ -81,6 +81,8 @@ namespace WF_Com
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.tBoxDry = new MetroFramework.Controls.MetroTextBox();
             this.btnResetValues = new MetroFramework.Controls.MetroButton();
+            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -93,40 +95,35 @@ namespace WF_Com
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.btnOpen);
             this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Location = new System.Drawing.Point(423, 308);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(317, 250);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(297, 123);
+            this.groupBox2.Size = new System.Drawing.Size(223, 100);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(160, 23);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Location = new System.Drawing.Point(120, 19);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(129, 28);
+            this.btnClose.Size = new System.Drawing.Size(97, 23);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Отключить";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(8, 23);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOpen.Location = new System.Drawing.Point(6, 19);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(127, 28);
+            this.btnOpen.Size = new System.Drawing.Size(95, 23);
             this.btnOpen.TabIndex = 18;
             this.btnOpen.Text = "Соединить";
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(8, 78);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.progressBar1.Location = new System.Drawing.Point(6, 63);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(281, 28);
+            this.progressBar1.Size = new System.Drawing.Size(211, 23);
             this.progressBar1.TabIndex = 17;
             // 
             // serialPort1
@@ -137,26 +134,24 @@ namespace WF_Com
             // 
             this.tBoxDataIN.BackColor = System.Drawing.Color.White;
             this.tBoxDataIN.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tBoxDataIN.Location = new System.Drawing.Point(804, 210);
-            this.tBoxDataIN.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxDataIN.Location = new System.Drawing.Point(603, 171);
             this.tBoxDataIN.Name = "tBoxDataIN";
-            this.tBoxDataIN.Size = new System.Drawing.Size(129, 28);
+            this.tBoxDataIN.Size = new System.Drawing.Size(97, 23);
             this.tBoxDataIN.TabIndex = 18;
             this.tBoxDataIN.TextChanged += new System.EventHandler(this.tBoxDataIN_TextChanged);
             // 
             // tBoxH2O
             // 
-            this.tBoxH2O.Location = new System.Drawing.Point(1407, 290);
-            this.tBoxH2O.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxH2O.Location = new System.Drawing.Point(1055, 236);
             this.tBoxH2O.Name = "tBoxH2O";
-            this.tBoxH2O.Size = new System.Drawing.Size(129, 28);
+            this.tBoxH2O.Size = new System.Drawing.Size(97, 23);
             this.tBoxH2O.TabIndex = 19;
             this.tBoxH2O.TextChanged += new System.EventHandler(this.tBoxH2O_TextChanged);
             // 
             // cBoxBaudRate
             // 
             this.cBoxBaudRate.FormattingEnabled = true;
-            this.cBoxBaudRate.ItemHeight = 24;
+            this.cBoxBaudRate.ItemHeight = 23;
             this.cBoxBaudRate.Items.AddRange(new object[] {
             "75",
             "110",
@@ -191,132 +186,120 @@ namespace WF_Com
             "5000000",
             "6000000",
             "12000000"});
-            this.cBoxBaudRate.Location = new System.Drawing.Point(168, 231);
-            this.cBoxBaudRate.Margin = new System.Windows.Forms.Padding(4);
+            this.cBoxBaudRate.Location = new System.Drawing.Point(126, 169);
             this.cBoxBaudRate.Name = "cBoxBaudRate";
-            this.cBoxBaudRate.Size = new System.Drawing.Size(160, 30);
+            this.cBoxBaudRate.Size = new System.Drawing.Size(121, 29);
             this.cBoxBaudRate.TabIndex = 17;
             // 
             // cBoxDataBits
             // 
             this.cBoxDataBits.FormattingEnabled = true;
-            this.cBoxDataBits.ItemHeight = 24;
+            this.cBoxDataBits.ItemHeight = 23;
             this.cBoxDataBits.Items.AddRange(new object[] {
             "4",
             "5",
             "6",
             "7",
             "8"});
-            this.cBoxDataBits.Location = new System.Drawing.Point(168, 292);
-            this.cBoxDataBits.Margin = new System.Windows.Forms.Padding(4);
+            this.cBoxDataBits.Location = new System.Drawing.Point(126, 218);
             this.cBoxDataBits.Name = "cBoxDataBits";
-            this.cBoxDataBits.Size = new System.Drawing.Size(160, 30);
+            this.cBoxDataBits.Size = new System.Drawing.Size(121, 29);
             this.cBoxDataBits.TabIndex = 18;
             // 
             // cBoxStopBits
             // 
             this.cBoxStopBits.FormattingEnabled = true;
-            this.cBoxStopBits.ItemHeight = 24;
+            this.cBoxStopBits.ItemHeight = 23;
             this.cBoxStopBits.Items.AddRange(new object[] {
             "One",
             "Two"});
-            this.cBoxStopBits.Location = new System.Drawing.Point(168, 351);
-            this.cBoxStopBits.Margin = new System.Windows.Forms.Padding(4);
+            this.cBoxStopBits.Location = new System.Drawing.Point(126, 266);
             this.cBoxStopBits.Name = "cBoxStopBits";
-            this.cBoxStopBits.Size = new System.Drawing.Size(160, 30);
+            this.cBoxStopBits.Size = new System.Drawing.Size(121, 29);
             this.cBoxStopBits.TabIndex = 19;
             // 
             // cBoxComPort
             // 
             this.cBoxComPort.FormattingEnabled = true;
-            this.cBoxComPort.ItemHeight = 24;
-            this.cBoxComPort.Location = new System.Drawing.Point(168, 172);
-            this.cBoxComPort.Margin = new System.Windows.Forms.Padding(4);
+            this.cBoxComPort.ItemHeight = 23;
+            this.cBoxComPort.Location = new System.Drawing.Point(126, 121);
             this.cBoxComPort.Name = "cBoxComPort";
-            this.cBoxComPort.Size = new System.Drawing.Size(160, 30);
+            this.cBoxComPort.Size = new System.Drawing.Size(121, 29);
             this.cBoxComPort.TabIndex = 16;
             // 
             // cBoxParityBits
             // 
             this.cBoxParityBits.FormattingEnabled = true;
-            this.cBoxParityBits.ItemHeight = 24;
+            this.cBoxParityBits.ItemHeight = 23;
             this.cBoxParityBits.Items.AddRange(new object[] {
             "Xon/Xoff",
             "Hardware",
             "None"});
-            this.cBoxParityBits.Location = new System.Drawing.Point(168, 409);
-            this.cBoxParityBits.Margin = new System.Windows.Forms.Padding(4);
+            this.cBoxParityBits.Location = new System.Drawing.Point(126, 313);
             this.cBoxParityBits.Name = "cBoxParityBits";
-            this.cBoxParityBits.Size = new System.Drawing.Size(160, 30);
+            this.cBoxParityBits.Size = new System.Drawing.Size(121, 29);
             this.cBoxParityBits.TabIndex = 20;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(40, 185);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(30, 131);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(80, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
             this.metroLabel1.TabIndex = 20;
             this.metroLabel1.Text = "COM PORT";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(40, 244);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(30, 179);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(89, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(84, 19);
             this.metroLabel2.TabIndex = 21;
             this.metroLabel2.Text = "BAUDE RATE";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(40, 304);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel3.Location = new System.Drawing.Point(30, 228);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(68, 19);
             this.metroLabel3.TabIndex = 22;
             this.metroLabel3.Text = "DATA BITS";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(40, 363);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel4.Location = new System.Drawing.Point(30, 276);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(72, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(70, 19);
             this.metroLabel4.TabIndex = 23;
             this.metroLabel4.Text = "STOP BITS";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(40, 421);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel5.Location = new System.Drawing.Point(30, 323);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(81, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(79, 19);
             this.metroLabel5.TabIndex = 24;
             this.metroLabel5.Text = "PARITY BITS";
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(803, 183);
-            this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel6.Location = new System.Drawing.Point(602, 149);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(105, 20);
+            this.metroLabel6.Size = new System.Drawing.Size(98, 19);
             this.metroLabel6.TabIndex = 25;
             this.metroLabel6.Text = "Текущий вес, г";
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(1407, 263);
-            this.metroLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel7.Location = new System.Drawing.Point(1055, 214);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(140, 20);
+            this.metroLabel7.Size = new System.Drawing.Size(134, 19);
             this.metroLabel7.TabIndex = 26;
             this.metroLabel7.Text = "Содержание воды, г";
             // 
@@ -325,10 +308,9 @@ namespace WF_Com
             this.metroLabel8.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel8.Cursor = System.Windows.Forms.Cursors.Help;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.Location = new System.Drawing.Point(261, 25);
-            this.metroLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel8.Location = new System.Drawing.Point(196, 20);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(719, 70);
+            this.metroLabel8.Size = new System.Drawing.Size(539, 57);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel8.TabIndex = 27;
             this.metroLabel8.Text = "Лабораторная работа\r\n\"Исследование режимов и способов сушки влажных материалов\"";
@@ -338,10 +320,9 @@ namespace WF_Com
             // 
             this.metroLabel9.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel9.Cursor = System.Windows.Forms.Cursors.Help;
-            this.metroLabel9.Location = new System.Drawing.Point(68, 129);
-            this.metroLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel9.Location = new System.Drawing.Point(52, 86);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(220, 23);
+            this.metroLabel9.Size = new System.Drawing.Size(165, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel9.TabIndex = 28;
             this.metroLabel9.Text = "Настройки COM-Порта";
@@ -350,10 +331,9 @@ namespace WF_Com
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(479, 158);
-            this.metroLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel10.Location = new System.Drawing.Point(359, 128);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(148, 20);
+            this.metroLabel10.Size = new System.Drawing.Size(142, 19);
             this.metroLabel10.TabIndex = 29;
             this.metroLabel10.Text = "Соединение активно:";
             // 
@@ -361,10 +341,9 @@ namespace WF_Com
             // 
             this.lblStatusCom.AutoSize = true;
             this.lblStatusCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblStatusCom.Location = new System.Drawing.Point(516, 230);
-            this.lblStatusCom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatusCom.Location = new System.Drawing.Point(387, 187);
             this.lblStatusCom.Name = "lblStatusCom";
-            this.lblStatusCom.Size = new System.Drawing.Size(114, 52);
+            this.lblStatusCom.Size = new System.Drawing.Size(89, 39);
             this.lblStatusCom.TabIndex = 30;
             this.lblStatusCom.Text = "НЕТ";
             // 
@@ -374,33 +353,28 @@ namespace WF_Com
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 501);
-            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 407);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(1621, 415);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(1216, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
             // metroTabPage1
             // 
             this.metroTabPage1.Controls.Add(this.cartesianChart1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarSize = 12;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
-            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1613, 372);
+            this.metroTabPage1.Size = new System.Drawing.Size(1208, 298);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "График с весом";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarSize = 13;
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(-5, 4);
-            this.cartesianChart1.Margin = new System.Windows.Forms.Padding(4);
+            this.cartesianChart1.Location = new System.Drawing.Point(-4, 3);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(1621, 363);
+            this.cartesianChart1.Size = new System.Drawing.Size(1216, 295);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -409,22 +383,18 @@ namespace WF_Com
             this.metroTabPage2.CausesValidation = false;
             this.metroTabPage2.Controls.Add(this.cartesianChart2);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarSize = 12;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 39);
-            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1613, 372);
+            this.metroTabPage2.Size = new System.Drawing.Size(1208, 298);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "График влажности";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarSize = 13;
             // 
             // cartesianChart2
             // 
-            this.cartesianChart2.Location = new System.Drawing.Point(-5, 1);
-            this.cartesianChart2.Margin = new System.Windows.Forms.Padding(4);
+            this.cartesianChart2.Location = new System.Drawing.Point(-4, 1);
             this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(1621, 366);
+            this.cartesianChart2.Size = new System.Drawing.Size(1216, 297);
             this.cartesianChart2.TabIndex = 3;
             this.cartesianChart2.Text = "cartesianChart2";
             // 
@@ -433,41 +403,35 @@ namespace WF_Com
             this.metroTabPage3.CausesValidation = false;
             this.metroTabPage3.Controls.Add(this.cartesianChart3);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarSize = 12;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 39);
-            this.metroTabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(1613, 372);
+            this.metroTabPage3.Size = new System.Drawing.Size(1208, 298);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "График этапов сушки";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarSize = 13;
             // 
             // cartesianChart3
             // 
-            this.cartesianChart3.Location = new System.Drawing.Point(-5, 1);
-            this.cartesianChart3.Margin = new System.Windows.Forms.Padding(4);
+            this.cartesianChart3.Location = new System.Drawing.Point(-4, 1);
             this.cartesianChart3.Name = "cartesianChart3";
-            this.cartesianChart3.Size = new System.Drawing.Size(1621, 366);
+            this.cartesianChart3.Size = new System.Drawing.Size(1216, 297);
             this.cartesianChart3.TabIndex = 4;
             this.cartesianChart3.Text = "cartesianChart3";
             // 
             // btnGraphWeightReset
             // 
-            this.btnGraphWeightReset.Location = new System.Drawing.Point(1069, 436);
-            this.btnGraphWeightReset.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGraphWeightReset.Location = new System.Drawing.Point(802, 354);
             this.btnGraphWeightReset.Name = "btnGraphWeightReset";
-            this.btnGraphWeightReset.Size = new System.Drawing.Size(155, 48);
+            this.btnGraphWeightReset.Size = new System.Drawing.Size(116, 39);
             this.btnGraphWeightReset.TabIndex = 5;
             this.btnGraphWeightReset.Text = "СТОП";
             this.btnGraphWeightReset.Click += new System.EventHandler(this.btnGraphWeightReset_Click);
             // 
             // btnGraphWeightStart
             // 
-            this.btnGraphWeightStart.Location = new System.Drawing.Point(891, 436);
-            this.btnGraphWeightStart.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGraphWeightStart.Location = new System.Drawing.Point(668, 354);
             this.btnGraphWeightStart.Name = "btnGraphWeightStart";
-            this.btnGraphWeightStart.Size = new System.Drawing.Size(155, 48);
+            this.btnGraphWeightStart.Size = new System.Drawing.Size(116, 39);
             this.btnGraphWeightStart.TabIndex = 3;
             this.btnGraphWeightStart.Text = "СТАРТ";
             this.btnGraphWeightStart.Click += new System.EventHandler(this.btnGraphWeightStart_Click);
@@ -475,56 +439,50 @@ namespace WF_Com
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(803, 263);
-            this.metroLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel11.Location = new System.Drawing.Point(602, 214);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(108, 20);
+            this.metroLabel11.Size = new System.Drawing.Size(102, 19);
             this.metroLabel11.TabIndex = 32;
             this.metroLabel11.Text = "Время сушки, с";
             // 
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(1203, 183);
-            this.metroLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel12.Location = new System.Drawing.Point(902, 149);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(132, 20);
+            this.metroLabel12.Size = new System.Drawing.Size(125, 19);
             this.metroLabel12.TabIndex = 33;
             this.metroLabel12.Text = "Начальная масса, г";
             // 
             // tBoxStartWeight
             // 
-            this.tBoxStartWeight.Location = new System.Drawing.Point(1203, 210);
-            this.tBoxStartWeight.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxStartWeight.Location = new System.Drawing.Point(902, 171);
             this.tBoxStartWeight.Name = "tBoxStartWeight";
-            this.tBoxStartWeight.Size = new System.Drawing.Size(131, 28);
+            this.tBoxStartWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxStartWeight.TabIndex = 34;
             // 
             // tBoxTime
             // 
-            this.tBoxTime.Location = new System.Drawing.Point(804, 290);
-            this.tBoxTime.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxTime.Location = new System.Drawing.Point(603, 236);
             this.tBoxTime.Name = "tBoxTime";
             this.tBoxTime.ReadOnly = true;
-            this.tBoxTime.Size = new System.Drawing.Size(131, 28);
+            this.tBoxTime.Size = new System.Drawing.Size(98, 23);
             this.tBoxTime.TabIndex = 35;
             // 
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(1203, 263);
-            this.metroLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel13.Location = new System.Drawing.Point(902, 214);
             this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(125, 20);
+            this.metroLabel13.Size = new System.Drawing.Size(119, 19);
             this.metroLabel13.TabIndex = 36;
             this.metroLabel13.Text = "Конечная масса, г";
             // 
             // tBoxFinishWeight
             // 
-            this.tBoxFinishWeight.Location = new System.Drawing.Point(1203, 290);
-            this.tBoxFinishWeight.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxFinishWeight.Location = new System.Drawing.Point(902, 236);
             this.tBoxFinishWeight.Name = "tBoxFinishWeight";
-            this.tBoxFinishWeight.Size = new System.Drawing.Size(131, 28);
+            this.tBoxFinishWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxFinishWeight.TabIndex = 37;
             this.tBoxFinishWeight.TextChanged += new System.EventHandler(this.tBoxFinishWeight_TextChanged);
             // 
@@ -532,10 +490,9 @@ namespace WF_Com
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel14.Location = new System.Drawing.Point(787, 128);
-            this.metroLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel14.Location = new System.Drawing.Point(590, 104);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(117, 25);
+            this.metroLabel14.Size = new System.Drawing.Size(114, 25);
             this.metroLabel14.TabIndex = 38;
             this.metroLabel14.Text = "Мониторинг:";
             // 
@@ -543,29 +500,26 @@ namespace WF_Com
             // 
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel16.Location = new System.Drawing.Point(1241, 128);
-            this.metroLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel16.Location = new System.Drawing.Point(931, 104);
             this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(184, 25);
+            this.metroLabel16.Size = new System.Drawing.Size(178, 25);
             this.metroLabel16.TabIndex = 40;
             this.metroLabel16.Text = "Расчётные значения:";
             // 
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(1407, 183);
-            this.metroLabel17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel17.Location = new System.Drawing.Point(1055, 149);
             this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(101, 20);
+            this.metroLabel17.Size = new System.Drawing.Size(97, 19);
             this.metroLabel17.TabIndex = 42;
             this.metroLabel17.Text = "Убыль влаги, г";
             // 
             // tBoxUbyl
             // 
-            this.tBoxUbyl.Location = new System.Drawing.Point(1407, 210);
-            this.tBoxUbyl.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxUbyl.Location = new System.Drawing.Point(1055, 171);
             this.tBoxUbyl.Name = "tBoxUbyl";
-            this.tBoxUbyl.Size = new System.Drawing.Size(129, 28);
+            this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
             this.tBoxUbyl.TabIndex = 41;
             // 
             // backgroundWorker1
@@ -574,19 +528,17 @@ namespace WF_Com
             // 
             // tBoxVlazh
             // 
-            this.tBoxVlazh.Location = new System.Drawing.Point(1407, 380);
-            this.tBoxVlazh.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxVlazh.Location = new System.Drawing.Point(1055, 309);
             this.tBoxVlazh.Name = "tBoxVlazh";
-            this.tBoxVlazh.Size = new System.Drawing.Size(129, 28);
+            this.tBoxVlazh.Size = new System.Drawing.Size(97, 23);
             this.tBoxVlazh.TabIndex = 43;
             // 
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(1407, 350);
-            this.metroLabel18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel18.Location = new System.Drawing.Point(1055, 284);
             this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(97, 20);
+            this.metroLabel18.Size = new System.Drawing.Size(91, 19);
             this.metroLabel18.TabIndex = 44;
             this.metroLabel18.Text = "Влажность, %";
             // 
@@ -599,49 +551,67 @@ namespace WF_Com
             // 
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel15.Location = new System.Drawing.Point(971, 128);
-            this.metroLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel15.Location = new System.Drawing.Point(728, 104);
             this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(164, 25);
+            this.metroLabel15.Size = new System.Drawing.Size(159, 25);
             this.metroLabel15.TabIndex = 45;
             this.metroLabel15.Text = "Исходные данные:";
             // 
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(971, 183);
-            this.metroLabel19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel19.Location = new System.Drawing.Point(728, 149);
             this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(168, 20);
+            this.metroLabel19.Size = new System.Drawing.Size(161, 19);
             this.metroLabel19.TabIndex = 46;
             this.metroLabel19.Text = "Масса сухой заготовки, г";
             // 
             // tBoxDry
             // 
-            this.tBoxDry.Location = new System.Drawing.Point(1003, 210);
-            this.tBoxDry.Margin = new System.Windows.Forms.Padding(4);
+            this.tBoxDry.Location = new System.Drawing.Point(752, 171);
             this.tBoxDry.Name = "tBoxDry";
-            this.tBoxDry.Size = new System.Drawing.Size(131, 28);
+            this.tBoxDry.Size = new System.Drawing.Size(98, 23);
             this.tBoxDry.TabIndex = 47;
             this.tBoxDry.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxDry_KeyPress);
             // 
             // btnResetValues
             // 
-            this.btnResetValues.Location = new System.Drawing.Point(1241, 452);
-            this.btnResetValues.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResetValues.Location = new System.Drawing.Point(931, 367);
             this.btnResetValues.Name = "btnResetValues";
-            this.btnResetValues.Size = new System.Drawing.Size(200, 32);
+            this.btnResetValues.Size = new System.Drawing.Size(150, 26);
             this.btnResetValues.TabIndex = 48;
             this.btnResetValues.Text = "Сбросить значения";
             this.btnResetValues.Click += new System.EventHandler(this.btnResetValues_Click);
             // 
+            // metroToggle1
+            // 
+            this.metroToggle1.AutoSize = true;
+            this.metroToggle1.Location = new System.Drawing.Point(206, 367);
+            this.metroToggle1.Name = "metroToggle1";
+            this.metroToggle1.Size = new System.Drawing.Size(80, 17);
+            this.metroToggle1.TabIndex = 49;
+            this.metroToggle1.Text = "Off";
+            this.metroToggle1.UseVisualStyleBackColor = true;
+            this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.Location = new System.Drawing.Point(30, 355);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(170, 38);
+            this.metroLabel20.TabIndex = 50;
+            this.metroLabel20.Text = "Показать дополнительные\r\nнастройки COM-порта";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1621, 916);
+            this.ClientSize = new System.Drawing.Size(1216, 744);
+            this.Controls.Add(this.metroLabel20);
+            this.Controls.Add(this.metroToggle1);
             this.Controls.Add(this.btnResetValues);
             this.Controls.Add(this.tBoxDry);
             this.Controls.Add(this.metroLabel19);
@@ -682,7 +652,6 @@ namespace WF_Com
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Исследование режимов и способов сушки влажных материалов";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -747,6 +716,8 @@ namespace WF_Com
         private MetroFramework.Controls.MetroTextBox tBoxDry;
         private LiveCharts.WinForms.CartesianChart cartesianChart3;
         private MetroFramework.Controls.MetroButton btnResetValues;
+        private MetroFramework.Controls.MetroToggle metroToggle1;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
     }
 }
 

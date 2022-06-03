@@ -37,6 +37,15 @@ namespace WF_Com
             cBoxDataBits.SelectedIndex = 4;
             cBoxStopBits.SelectedIndex = 0;
             cBoxParityBits.SelectedIndex = 2;
+
+            metroLabel2.Visible = false;
+            metroLabel3.Visible = false;
+            metroLabel4.Visible = false;
+            metroLabel5.Visible = false;
+            cBoxBaudRate.Visible = false;
+            cBoxDataBits.Visible = false;
+            cBoxParityBits.Visible = false;
+            cBoxStopBits.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -353,6 +362,32 @@ Value = 0
             tBoxH2O.Text = "";
             tBoxUbyl.Text = "";
             tBoxVlazh.Text = "";
+        }
+
+        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(metroToggle1.Checked)
+            {
+                metroLabel2.Visible = true;
+                metroLabel3.Visible = true;
+                metroLabel4.Visible = true;
+                metroLabel5.Visible = true;
+                cBoxBaudRate.Visible = true;
+                cBoxDataBits.Visible = true;
+                cBoxParityBits.Visible = true;
+                cBoxStopBits.Visible = true;
+            }
+            else
+            {
+                metroLabel2.Visible = false;
+                metroLabel3.Visible = false;
+                metroLabel4.Visible = false;
+                metroLabel5.Visible = false;
+                cBoxBaudRate.Visible = false;
+                cBoxDataBits.Visible = false;
+                cBoxParityBits.Visible = false;
+                cBoxStopBits.Visible = false;
+            }
         }
     }
 }
