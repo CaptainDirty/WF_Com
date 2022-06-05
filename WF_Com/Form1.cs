@@ -70,6 +70,8 @@ namespace WF_Com
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxComPort.Items.AddRange(ports);
+
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
