@@ -72,6 +72,7 @@ namespace WF_Com
             cBoxComPort.Items.AddRange(ports);
 
             metroTabControl1.SelectedIndex = 0;
+            metroTabControl1.Enabled = false;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace WF_Com
         private void btnClose_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
-                serialPort1.Close();
+            serialPort1.Close();
             progressBar1.Value = 0;
             btnOpen.Enabled = true;
             btnClose.Enabled = false;
@@ -143,11 +144,12 @@ namespace WF_Com
         }
 
         private void btnGraphWeightStart_Click(object sender, EventArgs e)
-        {
+        {            
             if (progressBar1.Value == 100)
             {
                 if (!flag)
                 {
+                    metroTabControl1.Enabled = true;
                     tBoxStartWeight.Text = tBoxDataIN.Text;
 
                     var mapper = Mappers.Xy<ChartModel>()
@@ -177,11 +179,11 @@ namespace WF_Com
                     {
                         Values = new ChartValues<ChartModel>
                         {
-                            new ChartModel
-                            {
-                                DateTime = DateTime.Now,
-                                Value = 0
-                            }
+                            //new ChartModel
+                            //{
+                            //    DateTime = DateTime.Now,
+                            //    Value = 0
+                            //}
                         }
                     }
                 };
@@ -210,11 +212,11 @@ namespace WF_Com
                     {
                         Values = new ChartValues<ChartModel>
                         {
-                            new ChartModel
-                            {
-                                DateTime = DateTime.Now,
-                                Value = 0
-                            }
+                            //new ChartModel
+                            //{
+                            //    DateTime = DateTime.Now,
+                            //    Value = 0
+                            //}
                         }
                     }
                 };
@@ -242,11 +244,11 @@ namespace WF_Com
                         {
                             Values = new ChartValues<ChartModel>
                             {
-                                new ChartModel
-                                {
-                                    DateTime = DateTime.Now,
-                                    Value = 0
-                                }
+                                //new ChartModel
+                                //{
+                                //    DateTime = DateTime.Now,
+                                //    Value = 0
+                                //}
                             }
                     }
                 };
@@ -325,7 +327,6 @@ namespace WF_Com
             if (double.TryParse(Ch, out result))
             {
                 result = Convert.ToDouble(tBoxDataIN.Text.Replace(".", ","));
-
             }
 
             cartesianChart1.Series[0].Values.Add(new ChartModel
@@ -350,7 +351,7 @@ namespace WF_Com
 
             string Ch3 = "";
 
-            if (cartesianChart2.Series[0].Values.Count >= 1)
+            if (cartesianChart2.Series[0].Values.Count >= 2)
             {
                 Ch3 = (((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 1]).Value - ((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 2]).Value).ToString();
             }
@@ -381,6 +382,15 @@ namespace WF_Com
 
         private void btnResetValues_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                tBoxFinishWeight.Text = tBoxDataIN.Text;
+
+                flag = false;
+
+                TimerSushka.Stop();
+            }
+
             tBoxStartWeight.Text = "";
             tBoxFinishWeight.Text = "";
             tBoxTime.Text = "";
@@ -389,18 +399,17 @@ namespace WF_Com
             tBoxUbyl.Text = "";
             tBoxVlazh.Text = "";
 
-            //if (flag)
-            //{
-                cartesianChart1.AxisX.Clear();
-                cartesianChart1.Series.Clear();
+            cartesianChart1.AxisX.Clear();
+            cartesianChart1.Series.Clear();
 
-                cartesianChart2.AxisX.Clear();
-                cartesianChart2.Series.Clear();
+            cartesianChart2.AxisX.Clear();
+            cartesianChart2.Series.Clear();
 
-                cartesianChart3.AxisX.Clear();
-                cartesianChart3.Series.Clear();
-                //flag = false;
-            //}
+            cartesianChart3.AxisX.Clear();
+            cartesianChart3.Series.Clear();
+
+            metroTabControl1.SelectedIndex = 0;
+            metroTabControl1.Enabled = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
