@@ -386,12 +386,43 @@ namespace WF_Com
             tBoxH2O.Text = "";
             tBoxUbyl.Text = "";
             tBoxVlazh.Text = "";
+
+            //if (flag)
+            //{
+                cartesianChart1.AxisX.Clear();
+                cartesianChart1.Series.Clear();
+
+                cartesianChart2.AxisX.Clear();
+                cartesianChart2.Series.Clear();
+
+                cartesianChart3.AxisX.Clear();
+                cartesianChart3.Series.Clear();
+                //flag = false;
+            //}
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (serialPort1.IsOpen)
                 serialPort1.Close();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+                Application.Exit();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Разработано Болотовым Александром\n2022\nКафедра ТИМ", "Автор", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

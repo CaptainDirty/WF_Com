@@ -218,7 +218,7 @@ namespace WF_Com
             this.metroLabel9.Size = new System.Drawing.Size(165, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel9.TabIndex = 28;
-            this.metroLabel9.Text = "Настройки COM-Порта";
+            this.metroLabel9.Text = "Выберите COM-Порт";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // metroLabel10
@@ -246,10 +246,10 @@ namespace WF_Com
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 368);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 377);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(990, 337);
+            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.Size = new System.Drawing.Size(974, 337);
             this.metroTabControl1.TabIndex = 31;
             // 
             // metroTabPage1
@@ -258,16 +258,16 @@ namespace WF_Com
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(982, 298);
+            this.metroTabPage1.Size = new System.Drawing.Size(966, 298);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "График с весом";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(-4, 3);
+            this.cartesianChart1.Location = new System.Drawing.Point(-4, 1);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(1216, 295);
+            this.cartesianChart1.Size = new System.Drawing.Size(974, 297);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -278,7 +278,7 @@ namespace WF_Com
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1126, 298);
+            this.metroTabPage2.Size = new System.Drawing.Size(966, 298);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "График влажности";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -287,7 +287,7 @@ namespace WF_Com
             // 
             this.cartesianChart2.Location = new System.Drawing.Point(-4, 1);
             this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(1216, 297);
+            this.cartesianChart2.Size = new System.Drawing.Size(974, 297);
             this.cartesianChart2.TabIndex = 3;
             this.cartesianChart2.Text = "cartesianChart2";
             // 
@@ -298,7 +298,7 @@ namespace WF_Com
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(1126, 298);
+            this.metroTabPage3.Size = new System.Drawing.Size(966, 298);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "График этапов сушки";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -307,7 +307,7 @@ namespace WF_Com
             // 
             this.cartesianChart3.Location = new System.Drawing.Point(-4, 1);
             this.cartesianChart3.Name = "cartesianChart3";
-            this.cartesianChart3.Size = new System.Drawing.Size(1216, 297);
+            this.cartesianChart3.Size = new System.Drawing.Size(974, 297);
             this.cartesianChart3.TabIndex = 4;
             this.cartesianChart3.Text = "cartesianChart3";
             // 
@@ -445,7 +445,7 @@ namespace WF_Com
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(990, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(974, 24);
             this.menuStrip1.TabIndex = 51;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -526,6 +526,7 @@ namespace WF_Com
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -538,8 +539,9 @@ namespace WF_Com
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // tBoxDry
             // 
@@ -589,7 +591,7 @@ namespace WF_Com
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox4.Location = new System.Drawing.Point(626, 112);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(143, 164);
+            this.groupBox4.Size = new System.Drawing.Size(143, 137);
             this.groupBox4.TabIndex = 55;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Расчёт";
@@ -612,7 +614,7 @@ namespace WF_Com
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(990, 705);
+            this.ClientSize = new System.Drawing.Size(974, 714);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
