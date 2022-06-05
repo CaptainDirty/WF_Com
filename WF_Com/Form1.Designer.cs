@@ -151,6 +151,7 @@ namespace WF_Com
             this.tBoxDataIN.Size = new System.Drawing.Size(97, 23);
             this.tBoxDataIN.TabIndex = 18;
             this.tBoxDataIN.TextChanged += new System.EventHandler(this.tBoxDataIN_TextChanged);
+            this.tBoxDataIN.Click += new System.EventHandler(this.tBoxDataIN_Click);
             // 
             // tBoxH2O
             // 
@@ -159,6 +160,7 @@ namespace WF_Com
             this.tBoxH2O.Size = new System.Drawing.Size(97, 23);
             this.tBoxH2O.TabIndex = 19;
             this.tBoxH2O.TextChanged += new System.EventHandler(this.tBoxH2O_TextChanged);
+            this.tBoxH2O.Click += new System.EventHandler(this.tBoxH2O_Click);
             // 
             // cBoxComPort
             // 
@@ -353,6 +355,7 @@ namespace WF_Com
             this.tBoxStartWeight.Name = "tBoxStartWeight";
             this.tBoxStartWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxStartWeight.TabIndex = 34;
+            this.tBoxStartWeight.Click += new System.EventHandler(this.tBoxStartWeight_Click);
             // 
             // tBoxTime
             // 
@@ -361,6 +364,7 @@ namespace WF_Com
             this.tBoxTime.ReadOnly = true;
             this.tBoxTime.Size = new System.Drawing.Size(98, 23);
             this.tBoxTime.TabIndex = 35;
+            this.tBoxTime.Click += new System.EventHandler(this.tBoxTime_Click);
             // 
             // metroLabel13
             // 
@@ -378,6 +382,7 @@ namespace WF_Com
             this.tBoxFinishWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxFinishWeight.TabIndex = 37;
             this.tBoxFinishWeight.TextChanged += new System.EventHandler(this.tBoxFinishWeight_TextChanged);
+            this.tBoxFinishWeight.Click += new System.EventHandler(this.tBoxFinishWeight_Click);
             // 
             // metroLabel17
             // 
@@ -394,6 +399,7 @@ namespace WF_Com
             this.tBoxUbyl.Name = "tBoxUbyl";
             this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
             this.tBoxUbyl.TabIndex = 41;
+            this.tBoxUbyl.Click += new System.EventHandler(this.tBoxUbyl_Click);
             // 
             // backgroundWorker1
             // 
@@ -401,11 +407,12 @@ namespace WF_Com
             // 
             // tBoxVlazh
             // 
+            this.tBoxVlazh.Enabled = false;
             this.tBoxVlazh.Location = new System.Drawing.Point(6, 147);
             this.tBoxVlazh.Name = "tBoxVlazh";
-            this.tBoxVlazh.ReadOnly = true;
             this.tBoxVlazh.Size = new System.Drawing.Size(97, 23);
             this.tBoxVlazh.TabIndex = 43;
+            this.tBoxVlazh.Click += new System.EventHandler(this.tBoxVlazh_Click);
             // 
             // metroLabel18
             // 

@@ -73,6 +73,8 @@ namespace WF_Com
 
             metroTabControl1.SelectedIndex = 0;
             metroTabControl1.Enabled = false;
+
+            tBoxVlazh.Enabled = false;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -434,6 +436,41 @@ namespace WF_Com
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Разработано Болотовым Александром\n2022\nКафедра ТИМ", "Автор", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void tBoxVlazh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxDataIN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxStartWeight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxUbyl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxFinishWeight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxH2O_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
