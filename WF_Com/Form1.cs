@@ -388,11 +388,6 @@ namespace WF_Com
             tBoxVlazh.Text = "";
         }
 
-        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (serialPort1.IsOpen)
