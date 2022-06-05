@@ -74,7 +74,6 @@ namespace WF_Com
             metroTabControl1.SelectedIndex = 0;
             metroTabControl1.Enabled = false;
 
-            tBoxVlazh.Enabled = false;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -149,33 +148,35 @@ namespace WF_Com
         {            
             if (progressBar1.Value == 100)
             {
-                if (!flag)
+                if(tBoxDry.Text != "" && tBoxDry.Text != null)
                 {
-                    metroTabControl1.Enabled = true;
-                    tBoxStartWeight.Text = tBoxDataIN.Text;
-
-                    var mapper = Mappers.Xy<ChartModel>()
-                    .X(x => x.DateTime.Ticks)
-                    .Y(x => x.Value);
-
-                    if (cartesianChart1.Series.Any())
+                    if (!flag)
                     {
-                        cartesianChart1.Series.Clear();
-                    }
+                        metroTabControl1.Enabled = true;
+                        tBoxStartWeight.Text = tBoxDataIN.Text;
 
-                    if (cartesianChart1.AxisX.Any())
-                    {
-                        cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
-                    }
-                    else
-                    {
-                        cartesianChart1.AxisX.Add(new Axis
+                        var mapper = Mappers.Xy<ChartModel>()
+                        .X(x => x.DateTime.Ticks)
+                        .Y(x => x.Value);
+
+                        if (cartesianChart1.Series.Any())
                         {
-                            LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                        });
-                    }
+                            cartesianChart1.Series.Clear();
+                        }
 
-                    cartesianChart1.Series = new SeriesCollection(mapper)
+                        if (cartesianChart1.AxisX.Any())
+                        {
+                            cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                        }
+                        else
+                        {
+                            cartesianChart1.AxisX.Add(new Axis
+                            {
+                                LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                            });
+                        }
+
+                        cartesianChart1.Series = new SeriesCollection(mapper)
                 {
                     new LineSeries
                     {
@@ -191,24 +192,24 @@ namespace WF_Com
                 };
 
 
-                    if (cartesianChart2.Series.Any())
-                    {
-                        cartesianChart2.Series.Clear();
-                    }
-
-                    if (cartesianChart2.AxisX.Any())
-                    {
-                        cartesianChart2.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
-                    }
-                    else
-                    {
-                        cartesianChart2.AxisX.Add(new Axis
+                        if (cartesianChart2.Series.Any())
                         {
-                            LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                        });
-                    }
+                            cartesianChart2.Series.Clear();
+                        }
 
-                    cartesianChart2.Series = new SeriesCollection(mapper)
+                        if (cartesianChart2.AxisX.Any())
+                        {
+                            cartesianChart2.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                        }
+                        else
+                        {
+                            cartesianChart2.AxisX.Add(new Axis
+                            {
+                                LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                            });
+                        }
+
+                        cartesianChart2.Series = new SeriesCollection(mapper)
                 {
                     new LineSeries
                     {
@@ -223,24 +224,24 @@ namespace WF_Com
                     }
                 };
 
-                    if (cartesianChart3.Series.Any())
-                    {
-                        cartesianChart3.Series.Clear();
-                    }
-
-                    if (cartesianChart3.AxisX.Any())
-                    {
-                        cartesianChart3.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
-                    }
-                    else
-                    {
-                        cartesianChart3.AxisX.Add(new Axis
+                        if (cartesianChart3.Series.Any())
                         {
-                            LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
-                        });
-                    }
+                            cartesianChart3.Series.Clear();
+                        }
 
-                    cartesianChart3.Series = new SeriesCollection(mapper)
+                        if (cartesianChart3.AxisX.Any())
+                        {
+                            cartesianChart3.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                        }
+                        else
+                        {
+                            cartesianChart3.AxisX.Add(new Axis
+                            {
+                                LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss")
+                            });
+                        }
+
+                        cartesianChart3.Series = new SeriesCollection(mapper)
                 {
                     new LineSeries
                         {
@@ -255,16 +256,21 @@ namespace WF_Com
                     }
                 };
 
-                    time = new DateTime(0001, 01, 01, 00, 00, 00);
+                        time = new DateTime(0001, 01, 01, 00, 00, 00);
 
-                    TimerSushka.Start();
+                        TimerSushka.Start();
 
-                    flag = true;
+                        flag = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Введите массу сухой заготовки", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Для начала работы необходимо настроить активное соединение с COM-портом");
+                MessageBox.Show("Для начала работы необходимо настроить активное соединение с COM-портом", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
