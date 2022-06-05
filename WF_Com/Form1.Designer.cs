@@ -38,16 +38,8 @@ namespace WF_Com
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tBoxDataIN = new MetroFramework.Controls.MetroTextBox();
             this.tBoxH2O = new MetroFramework.Controls.MetroTextBox();
-            this.cBoxBaudRate = new MetroFramework.Controls.MetroComboBox();
-            this.cBoxDataBits = new MetroFramework.Controls.MetroComboBox();
-            this.cBoxStopBits = new MetroFramework.Controls.MetroComboBox();
             this.cBoxComPort = new MetroFramework.Controls.MetroComboBox();
-            this.cBoxParityBits = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -83,11 +75,26 @@ namespace WF_Com
             this.btnResetValues = new MetroFramework.Controls.MetroButton();
             this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиCOMпортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bAUDERATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripBoxBaudRate = new System.Windows.Forms.ToolStripComboBox();
+            this.dATABITSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripBoxDataBits = new System.Windows.Forms.ToolStripComboBox();
+            this.sTOPBITSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripBoxStopBits = new System.Windows.Forms.ToolStripComboBox();
+            this.pARITYBITSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripBoxParityBits = new System.Windows.Forms.ToolStripComboBox();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -95,7 +102,7 @@ namespace WF_Com
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.btnOpen);
             this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Location = new System.Drawing.Point(317, 250);
+            this.groupBox2.Location = new System.Drawing.Point(30, 309);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(223, 100);
             this.groupBox2.TabIndex = 7;
@@ -134,7 +141,7 @@ namespace WF_Com
             // 
             this.tBoxDataIN.BackColor = System.Drawing.Color.White;
             this.tBoxDataIN.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tBoxDataIN.Location = new System.Drawing.Point(603, 171);
+            this.tBoxDataIN.Location = new System.Drawing.Point(528, 188);
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.Size = new System.Drawing.Size(97, 23);
             this.tBoxDataIN.TabIndex = 18;
@@ -142,81 +149,11 @@ namespace WF_Com
             // 
             // tBoxH2O
             // 
-            this.tBoxH2O.Location = new System.Drawing.Point(1055, 236);
+            this.tBoxH2O.Location = new System.Drawing.Point(811, 253);
             this.tBoxH2O.Name = "tBoxH2O";
             this.tBoxH2O.Size = new System.Drawing.Size(97, 23);
             this.tBoxH2O.TabIndex = 19;
             this.tBoxH2O.TextChanged += new System.EventHandler(this.tBoxH2O_TextChanged);
-            // 
-            // cBoxBaudRate
-            // 
-            this.cBoxBaudRate.FormattingEnabled = true;
-            this.cBoxBaudRate.ItemHeight = 23;
-            this.cBoxBaudRate.Items.AddRange(new object[] {
-            "75",
-            "110",
-            "134",
-            "150",
-            "300",
-            "600",
-            "1200",
-            "2400",
-            "4800",
-            "7200",
-            "9600",
-            "14400",
-            "19200",
-            "38400",
-            "57600",
-            "115200",
-            "128000",
-            "134400",
-            "161280",
-            "201600",
-            "230400",
-            "268800",
-            "403200",
-            "460800",
-            "614400",
-            "806400",
-            "921600",
-            "1228800",
-            "3000000",
-            "4000000",
-            "5000000",
-            "6000000",
-            "12000000"});
-            this.cBoxBaudRate.Location = new System.Drawing.Point(126, 169);
-            this.cBoxBaudRate.Name = "cBoxBaudRate";
-            this.cBoxBaudRate.Size = new System.Drawing.Size(121, 29);
-            this.cBoxBaudRate.TabIndex = 17;
-            // 
-            // cBoxDataBits
-            // 
-            this.cBoxDataBits.FormattingEnabled = true;
-            this.cBoxDataBits.ItemHeight = 23;
-            this.cBoxDataBits.Items.AddRange(new object[] {
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"});
-            this.cBoxDataBits.Location = new System.Drawing.Point(126, 218);
-            this.cBoxDataBits.Name = "cBoxDataBits";
-            this.cBoxDataBits.Size = new System.Drawing.Size(121, 29);
-            this.cBoxDataBits.TabIndex = 18;
-            // 
-            // cBoxStopBits
-            // 
-            this.cBoxStopBits.FormattingEnabled = true;
-            this.cBoxStopBits.ItemHeight = 23;
-            this.cBoxStopBits.Items.AddRange(new object[] {
-            "One",
-            "Two"});
-            this.cBoxStopBits.Location = new System.Drawing.Point(126, 266);
-            this.cBoxStopBits.Name = "cBoxStopBits";
-            this.cBoxStopBits.Size = new System.Drawing.Size(121, 29);
-            this.cBoxStopBits.TabIndex = 19;
             // 
             // cBoxComPort
             // 
@@ -227,19 +164,6 @@ namespace WF_Com
             this.cBoxComPort.Size = new System.Drawing.Size(121, 29);
             this.cBoxComPort.TabIndex = 16;
             // 
-            // cBoxParityBits
-            // 
-            this.cBoxParityBits.FormattingEnabled = true;
-            this.cBoxParityBits.ItemHeight = 23;
-            this.cBoxParityBits.Items.AddRange(new object[] {
-            "Xon/Xoff",
-            "Hardware",
-            "None"});
-            this.cBoxParityBits.Location = new System.Drawing.Point(126, 313);
-            this.cBoxParityBits.Name = "cBoxParityBits";
-            this.cBoxParityBits.Size = new System.Drawing.Size(121, 29);
-            this.cBoxParityBits.TabIndex = 20;
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -249,46 +173,10 @@ namespace WF_Com
             this.metroLabel1.TabIndex = 20;
             this.metroLabel1.Text = "COM PORT";
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(30, 179);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(84, 19);
-            this.metroLabel2.TabIndex = 21;
-            this.metroLabel2.Text = "BAUDE RATE";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(30, 228);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(68, 19);
-            this.metroLabel3.TabIndex = 22;
-            this.metroLabel3.Text = "DATA BITS";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(30, 276);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel4.TabIndex = 23;
-            this.metroLabel4.Text = "STOP BITS";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(30, 323);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(79, 19);
-            this.metroLabel5.TabIndex = 24;
-            this.metroLabel5.Text = "PARITY BITS";
-            // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(602, 149);
+            this.metroLabel6.Location = new System.Drawing.Point(527, 166);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(98, 19);
             this.metroLabel6.TabIndex = 25;
@@ -297,7 +185,7 @@ namespace WF_Com
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(1055, 214);
+            this.metroLabel7.Location = new System.Drawing.Point(811, 231);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(134, 19);
             this.metroLabel7.TabIndex = 26;
@@ -308,7 +196,7 @@ namespace WF_Com
             this.metroLabel8.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel8.Cursor = System.Windows.Forms.Cursors.Help;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.Location = new System.Drawing.Point(196, 20);
+            this.metroLabel8.Location = new System.Drawing.Point(223, 33);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(539, 57);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Black;
@@ -331,7 +219,7 @@ namespace WF_Com
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(359, 128);
+            this.metroLabel10.Location = new System.Drawing.Point(72, 187);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(142, 19);
             this.metroLabel10.TabIndex = 29;
@@ -341,7 +229,7 @@ namespace WF_Com
             // 
             this.lblStatusCom.AutoSize = true;
             this.lblStatusCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblStatusCom.Location = new System.Drawing.Point(387, 187);
+            this.lblStatusCom.Location = new System.Drawing.Point(100, 246);
             this.lblStatusCom.Name = "lblStatusCom";
             this.lblStatusCom.Size = new System.Drawing.Size(89, 39);
             this.lblStatusCom.TabIndex = 30;
@@ -353,7 +241,7 @@ namespace WF_Com
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 407);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 459);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1216, 337);
@@ -420,7 +308,7 @@ namespace WF_Com
             // 
             // btnGraphWeightReset
             // 
-            this.btnGraphWeightReset.Location = new System.Drawing.Point(802, 354);
+            this.btnGraphWeightReset.Location = new System.Drawing.Point(1033, 211);
             this.btnGraphWeightReset.Name = "btnGraphWeightReset";
             this.btnGraphWeightReset.Size = new System.Drawing.Size(116, 39);
             this.btnGraphWeightReset.TabIndex = 5;
@@ -429,7 +317,7 @@ namespace WF_Com
             // 
             // btnGraphWeightStart
             // 
-            this.btnGraphWeightStart.Location = new System.Drawing.Point(668, 354);
+            this.btnGraphWeightStart.Location = new System.Drawing.Point(1033, 131);
             this.btnGraphWeightStart.Name = "btnGraphWeightStart";
             this.btnGraphWeightStart.Size = new System.Drawing.Size(116, 39);
             this.btnGraphWeightStart.TabIndex = 3;
@@ -439,7 +327,7 @@ namespace WF_Com
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(602, 214);
+            this.metroLabel11.Location = new System.Drawing.Point(527, 231);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(102, 19);
             this.metroLabel11.TabIndex = 32;
@@ -448,7 +336,7 @@ namespace WF_Com
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(902, 149);
+            this.metroLabel12.Location = new System.Drawing.Point(658, 166);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(125, 19);
             this.metroLabel12.TabIndex = 33;
@@ -456,14 +344,14 @@ namespace WF_Com
             // 
             // tBoxStartWeight
             // 
-            this.tBoxStartWeight.Location = new System.Drawing.Point(902, 171);
+            this.tBoxStartWeight.Location = new System.Drawing.Point(658, 188);
             this.tBoxStartWeight.Name = "tBoxStartWeight";
             this.tBoxStartWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxStartWeight.TabIndex = 34;
             // 
             // tBoxTime
             // 
-            this.tBoxTime.Location = new System.Drawing.Point(603, 236);
+            this.tBoxTime.Location = new System.Drawing.Point(528, 253);
             this.tBoxTime.Name = "tBoxTime";
             this.tBoxTime.ReadOnly = true;
             this.tBoxTime.Size = new System.Drawing.Size(98, 23);
@@ -472,7 +360,7 @@ namespace WF_Com
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(902, 214);
+            this.metroLabel13.Location = new System.Drawing.Point(658, 231);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(119, 19);
             this.metroLabel13.TabIndex = 36;
@@ -480,7 +368,7 @@ namespace WF_Com
             // 
             // tBoxFinishWeight
             // 
-            this.tBoxFinishWeight.Location = new System.Drawing.Point(902, 236);
+            this.tBoxFinishWeight.Location = new System.Drawing.Point(658, 253);
             this.tBoxFinishWeight.Name = "tBoxFinishWeight";
             this.tBoxFinishWeight.Size = new System.Drawing.Size(98, 23);
             this.tBoxFinishWeight.TabIndex = 37;
@@ -490,7 +378,7 @@ namespace WF_Com
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel14.Location = new System.Drawing.Point(590, 104);
+            this.metroLabel14.Location = new System.Drawing.Point(515, 121);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(114, 25);
             this.metroLabel14.TabIndex = 38;
@@ -500,7 +388,7 @@ namespace WF_Com
             // 
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel16.Location = new System.Drawing.Point(931, 104);
+            this.metroLabel16.Location = new System.Drawing.Point(687, 121);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(178, 25);
             this.metroLabel16.TabIndex = 40;
@@ -509,7 +397,7 @@ namespace WF_Com
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(1055, 149);
+            this.metroLabel17.Location = new System.Drawing.Point(811, 166);
             this.metroLabel17.Name = "metroLabel17";
             this.metroLabel17.Size = new System.Drawing.Size(97, 19);
             this.metroLabel17.TabIndex = 42;
@@ -517,7 +405,7 @@ namespace WF_Com
             // 
             // tBoxUbyl
             // 
-            this.tBoxUbyl.Location = new System.Drawing.Point(1055, 171);
+            this.tBoxUbyl.Location = new System.Drawing.Point(811, 188);
             this.tBoxUbyl.Name = "tBoxUbyl";
             this.tBoxUbyl.Size = new System.Drawing.Size(97, 23);
             this.tBoxUbyl.TabIndex = 41;
@@ -528,7 +416,7 @@ namespace WF_Com
             // 
             // tBoxVlazh
             // 
-            this.tBoxVlazh.Location = new System.Drawing.Point(1055, 309);
+            this.tBoxVlazh.Location = new System.Drawing.Point(811, 326);
             this.tBoxVlazh.Name = "tBoxVlazh";
             this.tBoxVlazh.Size = new System.Drawing.Size(97, 23);
             this.tBoxVlazh.TabIndex = 43;
@@ -536,7 +424,7 @@ namespace WF_Com
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(1055, 284);
+            this.metroLabel18.Location = new System.Drawing.Point(811, 301);
             this.metroLabel18.Name = "metroLabel18";
             this.metroLabel18.Size = new System.Drawing.Size(91, 19);
             this.metroLabel18.TabIndex = 44;
@@ -551,7 +439,7 @@ namespace WF_Com
             // 
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel15.Location = new System.Drawing.Point(728, 104);
+            this.metroLabel15.Location = new System.Drawing.Point(308, 166);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(159, 25);
             this.metroLabel15.TabIndex = 45;
@@ -560,7 +448,7 @@ namespace WF_Com
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(728, 149);
+            this.metroLabel19.Location = new System.Drawing.Point(308, 211);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(161, 19);
             this.metroLabel19.TabIndex = 46;
@@ -568,7 +456,7 @@ namespace WF_Com
             // 
             // tBoxDry
             // 
-            this.tBoxDry.Location = new System.Drawing.Point(752, 171);
+            this.tBoxDry.Location = new System.Drawing.Point(332, 233);
             this.tBoxDry.Name = "tBoxDry";
             this.tBoxDry.Size = new System.Drawing.Size(98, 23);
             this.tBoxDry.TabIndex = 47;
@@ -576,7 +464,7 @@ namespace WF_Com
             // 
             // btnResetValues
             // 
-            this.btnResetValues.Location = new System.Drawing.Point(931, 367);
+            this.btnResetValues.Location = new System.Drawing.Point(1017, 294);
             this.btnResetValues.Name = "btnResetValues";
             this.btnResetValues.Size = new System.Drawing.Size(150, 26);
             this.btnResetValues.TabIndex = 48;
@@ -586,7 +474,7 @@ namespace WF_Com
             // metroToggle1
             // 
             this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Location = new System.Drawing.Point(206, 367);
+            this.metroToggle1.Location = new System.Drawing.Point(1087, 442);
             this.metroToggle1.Name = "metroToggle1";
             this.metroToggle1.Size = new System.Drawing.Size(80, 17);
             this.metroToggle1.TabIndex = 49;
@@ -597,11 +485,114 @@ namespace WF_Com
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
-            this.metroLabel20.Location = new System.Drawing.Point(30, 355);
+            this.metroLabel20.Location = new System.Drawing.Point(911, 430);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(170, 38);
             this.metroLabel20.TabIndex = 50;
             this.metroLabel20.Text = "Показать дополнительные\r\nнастройки COM-порта";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem,
+            this.справкаToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1216, 24);
+            this.menuStrip1.TabIndex = 51;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.настройкиCOMпортToolStripMenuItem,
+            this.выходToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // настройкиCOMпортToolStripMenuItem
+            // 
+            this.настройкиCOMпортToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bAUDERATEToolStripMenuItem,
+            this.dATABITSToolStripMenuItem,
+            this.sTOPBITSToolStripMenuItem,
+            this.pARITYBITSToolStripMenuItem});
+            this.настройкиCOMпортToolStripMenuItem.Name = "настройкиCOMпортToolStripMenuItem";
+            this.настройкиCOMпортToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.настройкиCOMпортToolStripMenuItem.Text = "Настройки COM-порт";
+            // 
+            // bAUDERATEToolStripMenuItem
+            // 
+            this.bAUDERATEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripBoxBaudRate});
+            this.bAUDERATEToolStripMenuItem.Name = "bAUDERATEToolStripMenuItem";
+            this.bAUDERATEToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.bAUDERATEToolStripMenuItem.Text = "Бит в секунду";
+            // 
+            // toolStripBoxBaudRate
+            // 
+            this.toolStripBoxBaudRate.Name = "toolStripBoxBaudRate";
+            this.toolStripBoxBaudRate.Size = new System.Drawing.Size(121, 23);
+            // 
+            // dATABITSToolStripMenuItem
+            // 
+            this.dATABITSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripBoxDataBits});
+            this.dATABITSToolStripMenuItem.Name = "dATABITSToolStripMenuItem";
+            this.dATABITSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.dATABITSToolStripMenuItem.Text = "Биты данных";
+            // 
+            // toolStripBoxDataBits
+            // 
+            this.toolStripBoxDataBits.Name = "toolStripBoxDataBits";
+            this.toolStripBoxDataBits.Size = new System.Drawing.Size(121, 23);
+            // 
+            // sTOPBITSToolStripMenuItem
+            // 
+            this.sTOPBITSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripBoxStopBits});
+            this.sTOPBITSToolStripMenuItem.Name = "sTOPBITSToolStripMenuItem";
+            this.sTOPBITSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.sTOPBITSToolStripMenuItem.Text = "Стоповые";
+            // 
+            // toolStripBoxStopBits
+            // 
+            this.toolStripBoxStopBits.Name = "toolStripBoxStopBits";
+            this.toolStripBoxStopBits.Size = new System.Drawing.Size(121, 23);
+            // 
+            // pARITYBITSToolStripMenuItem
+            // 
+            this.pARITYBITSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripBoxParityBits});
+            this.pARITYBITSToolStripMenuItem.Name = "pARITYBITSToolStripMenuItem";
+            this.pARITYBITSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.pARITYBITSToolStripMenuItem.Text = "Управление потоком";
+            // 
+            // toolStripBoxParityBits
+            // 
+            this.toolStripBoxParityBits.Name = "toolStripBoxParityBits";
+            this.toolStripBoxParityBits.Size = new System.Drawing.Size(121, 23);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оПрограммеToolStripMenuItem});
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // Form1
             // 
@@ -609,7 +600,7 @@ namespace WF_Com
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1216, 744);
+            this.ClientSize = new System.Drawing.Size(1216, 796);
             this.Controls.Add(this.metroLabel20);
             this.Controls.Add(this.metroToggle1);
             this.Controls.Add(this.btnResetValues);
@@ -637,21 +628,15 @@ namespace WF_Com
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.cBoxParityBits);
             this.Controls.Add(this.cBoxComPort);
-            this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.cBoxStopBits);
-            this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.cBoxDataBits);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.cBoxBaudRate);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.tBoxH2O);
             this.Controls.Add(this.tBoxDataIN);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Исследование режимов и способов сушки влажных материалов";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -661,6 +646,8 @@ namespace WF_Com
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,16 +661,8 @@ namespace WF_Com
         private MetroFramework.Controls.MetroButton btnOpen;
         private MetroFramework.Controls.MetroTextBox tBoxDataIN;
         private MetroFramework.Controls.MetroTextBox tBoxH2O;
-        private MetroFramework.Controls.MetroComboBox cBoxBaudRate;
-        private MetroFramework.Controls.MetroComboBox cBoxDataBits;
-        private MetroFramework.Controls.MetroComboBox cBoxStopBits;
         private MetroFramework.Controls.MetroComboBox cBoxComPort;
-        private MetroFramework.Controls.MetroComboBox cBoxParityBits;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
@@ -719,6 +698,20 @@ namespace WF_Com
         private MetroFramework.Controls.MetroButton btnResetValues;
         private MetroFramework.Controls.MetroToggle metroToggle1;
         private MetroFramework.Controls.MetroLabel metroLabel20;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem настройкиCOMпортToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bAUDERATEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripBoxBaudRate;
+        private System.Windows.Forms.ToolStripMenuItem dATABITSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripBoxDataBits;
+        private System.Windows.Forms.ToolStripMenuItem sTOPBITSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripBoxStopBits;
+        private System.Windows.Forms.ToolStripMenuItem pARITYBITSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripBoxParityBits;
     }
 }
 

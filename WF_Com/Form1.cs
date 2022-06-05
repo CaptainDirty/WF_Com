@@ -33,19 +33,37 @@ namespace WF_Com
             StartPosition = FormStartPosition.CenterScreen;
             MaximizeBox = false;
 
-            cBoxBaudRate.SelectedIndex = 10;
-            cBoxDataBits.SelectedIndex = 4;
-            cBoxStopBits.SelectedIndex = 0;
-            cBoxParityBits.SelectedIndex = 2;
+            toolStripBoxBaudRate.Text = "9600";
+            toolStripBoxDataBits.Text = "8";
+            toolStripBoxStopBits.Text = "One";
+            toolStripBoxParityBits.Text = "None";
+            toolStripBoxBaudRate.Items.Add("75");
+            toolStripBoxBaudRate.Items.Add("110");
+            toolStripBoxBaudRate.Items.Add("134");
+            toolStripBoxBaudRate.Items.Add("150");
+            toolStripBoxBaudRate.Items.Add("300");
+            toolStripBoxBaudRate.Items.Add("600");
+            toolStripBoxBaudRate.Items.Add("1200");
+            toolStripBoxBaudRate.Items.Add("1800");
+            toolStripBoxBaudRate.Items.Add("2400");
+            toolStripBoxBaudRate.Items.Add("4800");
+            toolStripBoxBaudRate.Items.Add("7200");
+            toolStripBoxBaudRate.Items.Add("9600");
+            toolStripBoxBaudRate.Items.Add("14400");
+            toolStripBoxBaudRate.Items.Add("19200");
+            toolStripBoxBaudRate.Items.Add("38400");
+            toolStripBoxBaudRate.Items.Add("57600");
+            toolStripBoxBaudRate.Items.Add("115200");
+            toolStripBoxBaudRate.Items.Add("128000");
 
-            metroLabel2.Visible = false;
-            metroLabel3.Visible = false;
-            metroLabel4.Visible = false;
-            metroLabel5.Visible = false;
-            cBoxBaudRate.Visible = false;
-            cBoxDataBits.Visible = false;
-            cBoxParityBits.Visible = false;
-            cBoxStopBits.Visible = false;
+            toolStripBoxDataBits.Items.Add("4");
+            toolStripBoxDataBits.Items.Add("5");
+            toolStripBoxDataBits.Items.Add("6");
+            toolStripBoxDataBits.Items.Add("7");
+            toolStripBoxDataBits.Items.Add("8");
+
+            toolStripBoxStopBits.Items.Add("One");
+            toolStripBoxStopBits.Items.Add("Two");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -59,10 +77,10 @@ namespace WF_Com
             try
             {
                 serialPort1.PortName = cBoxComPort.Text;
-                serialPort1.BaudRate = Convert.ToInt32(cBoxBaudRate.Text);
-                serialPort1.DataBits = Convert.ToInt32(cBoxDataBits.Text);
-                serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cBoxStopBits.Text);
-                serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), cBoxParityBits.Text);
+                serialPort1.BaudRate = Convert.ToInt32(toolStripBoxBaudRate.Text);
+                serialPort1.DataBits = Convert.ToInt32(toolStripBoxDataBits.Text);
+                serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), toolStripBoxStopBits.Text);
+                serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), toolStripBoxParityBits.Text);
 
                 serialPort1.Open();
                 progressBar1.Value = 100;
@@ -124,7 +142,7 @@ namespace WF_Com
 
         private void btnGraphWeightStart_Click(object sender, EventArgs e)
         {
-            if (progressBar1.Value==100)
+            if (progressBar1.Value == 100)
             {
                 if (!flag)
                 {
@@ -263,9 +281,9 @@ namespace WF_Com
             double resultStart = 0;
             if (double.TryParse(tBoxDry.Text, out resultDry) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
             {
-                tBoxVlazh.Text = Math.Round((((resultNow - resultDry) / resultDry) * 100), 2).ToString();        
+                tBoxVlazh.Text = Math.Round((((resultNow - resultDry) / resultDry) * 100), 2).ToString();
             }
-            if(double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
+            if (double.TryParse(tBoxStartWeight.Text, out resultStart) && double.TryParse(tBoxDataIN.Text.Replace(".", ",").Replace(" ", ""), out resultNow))
             {
                 tBoxUbyl.Text = (resultStart - resultNow).ToString();
             }
@@ -330,7 +348,7 @@ namespace WF_Com
 
             string Ch3 = "";
 
-            if (cartesianChart2.Series[0].Values.Count >= 3)
+            if (cartesianChart2.Series[0].Values.Count >= 1)
             {
                 Ch3 = (((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 1]).Value - ((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 2]).Value).ToString();
             }
@@ -372,28 +390,7 @@ namespace WF_Com
 
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
-            if(metroToggle1.Checked)
-            {
-                metroLabel2.Visible = true;
-                metroLabel3.Visible = true;
-                metroLabel4.Visible = true;
-                metroLabel5.Visible = true;
-                cBoxBaudRate.Visible = true;
-                cBoxDataBits.Visible = true;
-                cBoxParityBits.Visible = true;
-                cBoxStopBits.Visible = true;
-            }
-            else
-            {
-                metroLabel2.Visible = false;
-                metroLabel3.Visible = false;
-                metroLabel4.Visible = false;
-                metroLabel5.Visible = false;
-                cBoxBaudRate.Visible = false;
-                cBoxDataBits.Visible = false;
-                cBoxParityBits.Visible = false;
-                cBoxStopBits.Visible = false;
-            }
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
