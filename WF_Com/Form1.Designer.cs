@@ -403,6 +403,7 @@ namespace WF_Com
             // 
             this.tBoxVlazh.Location = new System.Drawing.Point(6, 147);
             this.tBoxVlazh.Name = "tBoxVlazh";
+            this.tBoxVlazh.ReadOnly = true;
             this.tBoxVlazh.Size = new System.Drawing.Size(97, 23);
             this.tBoxVlazh.TabIndex = 43;
             // 
@@ -539,7 +540,7 @@ namespace WF_Com
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 

@@ -196,7 +196,7 @@ namespace WF_Com
 
                     if (cartesianChart2.AxisX.Any())
                     {
-                        cartesianChart1.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
+                        cartesianChart2.AxisX[0].LabelFormatter = value => DateTime.Now.ToString("HH:mm:ss");
                     }
                     else
                     {
@@ -353,7 +353,7 @@ namespace WF_Com
 
             if (cartesianChart2.Series[0].Values.Count >= 2)
             {
-                Ch3 = (((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 1]).Value - ((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 2]).Value).ToString();
+                Ch3 = (/*((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 1]).Value - */((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 2]).Value - ((ChartModel)cartesianChart2.Series[0].Values[cartesianChart2.Series[0].Values.Count - 1]).Value).ToString();
             }
 
 
